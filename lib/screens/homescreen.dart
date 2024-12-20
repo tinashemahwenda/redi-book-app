@@ -97,6 +97,44 @@ class _HomePageState extends State<HomePage> {
                               chapters: book.chapters.toString()),
                         );
                       })),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Text(
+                  'Hottest Reading Lists',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Column(
+                  spacing: 5,
+                  children: [
+                    CircleAvatar(
+                      radius: AppMeasure.width / 10,
+                      child: Icon(
+                        Icons.accessible_outlined,
+                        color: Colors.black,
+                        size: 30,
+                      ),
+                    ),
+                    Text(
+                      'Fiction',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ));
