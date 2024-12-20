@@ -1,0 +1,73 @@
+
+
+[
+  {
+    "title": "Dzinza RaChiedza",
+    "author": "Monster",
+    "coverPath" : "assets/images/book-cover-2.png",
+    "chapters": [
+      {
+        "chapter": 1,
+        "title": "Chiedza muNyika Yakadzima",
+        "content": "Mumusha weMapfumo, kwaive nekutambura kukuru. Vana vemumusha vaibatsirana kuti vasasara nebasa rekurima, asi mhuri yaChiedza ndiyo yaizivikanwa nekushingirira. Chiedza, mukadzi akareruka mwoyo, aive nerudo rukuru rwemhuri yake uye nechido chekuchinja upenyu hwavo.\n\n“Mai Chiedza, makanyatsoronga here kuti tiite sei gore rino?” akaridza mhere Baba Tinashe, murume wake. “Munda wedu wakashaya mvura; chibage hachikwire.”\n\nChiedza akabva aramba akanyarara kwechinguva achiona mabhiza emvura ari kupfuura nemumugwagwa. \"Kana tikabatana, tinokunda, Baba Tinashe,\" akadaro zvinyoronyoro.\n\nAsi mumusha, kwaive nevanhu vakanga vagara vatambura uye vakatadza kuona kwainobva tariro. Chiedza akatanga kuvagadziridza mweya achivati, \"Tinofanira kuvimba nemasimba edu nekufunga nzira nyowani dzekurarama, kunyange nyika yedu iri kuzadzwa nezuva rekutambudzika.\""
+      },
+      {
+        "chapter": 2,
+        "title": "Hondo Yemweya",
+        "content": "Panguva iyo musha waMapfumo waive paora mukati nekutapwa kweminda nevari kunze, Baba Mapfumo vakadzoka kubva kuHarare vachigadzirisa mashoko ekuti ivhu ravo raizotorwa. Mhuri yaChiedza yakatya uye vanhu vakatanga kuparadzirwa nekutya.\n\n“Handizokanganwi chitsidzo changu kumusha uyu!” Chiedza akadaro nehasha. Akadaidzira musangano mukuru pachivanze, achikumbira vanhu kuti vabatsirane vachigadzira nzira itsva.\n\nVanhu vakatanga kugadzira matura ekuchengetedza mbeu dzavo dzekare uye kudzidzisa vana zvekushandisa zvipfeko zvemumba kuita machira aingotengeswa muguta. Baba Mapfumo, kunyangwe vasina kutenda zvirongwa zveChiedza pakutanga, vakazova mutungamiriri werwendo urwu rutsva.\n\nZvisinei, kukakavadzana kwevatambi vemusha kwaizotadzisa kufambira mberi. “Munhu wese anofanira kuva nerugare,” akadaro Chiedza achiyamura vakomana vakanga vambosungwa netsika dzekare."
+      },
+      {
+        "chapter": 3,
+        "title": "Kuzvarwa kweChiedza",
+        "content": "Makore matatu akanga apfuura. Musha waMapfumo wakanga washanduka kuita nzvimbo ine mufaro neupenyu. Vana vakatanga kuenda kuchikoro, mabhizimusi madiki akange atanga, uye vanhu vakadzidza kugadzirisa zvavanazvo kuti vapone.\n\nChiedza akagara pasi nevanakomana vake, achinyatsofungisisa mabasa avo ekare. \"Tinofanira kudzidza kuti nzvimbo dzedu dzive dzedu nekusingaperi,\" akadaro achiratidza zvinyorwa zvebhuku raakanyora pamusoro pekusimudzira mhuri dzemisha.\n\n“Mai Chiedza, imi muri chiedza chedu!” vakachema vanhu vemusha. Basa rake rakanga rasvika kunhengo dzese dzenharaunda uye kuunza budiriro yakashinga."
+      }
+    ],
+    "message": "Hupenyu hunoda kushanda pamwe chete, kutya kusingadzikame hakutonge hutano hwemumisha kana dzinza. Munhu mumwe chete ane chivimbo angashandura nyika yose!"
+  },
+  {
+    "title": "Mapenzi EkuHarare",
+    "author": "Tinashe Mahwenda",
+    "coverPath" : "assets/images/book-cover.png",
+    "chapters": [
+      {
+        "chapter": 1,
+        "title": "Mazuva Akare",
+        "content": "Harare yaimbova guta rakakurumbira, asi zvino zvava nematambudziko akawanda. Vashandi vemumigwagwa vari kupindura mubvunzo wokuti, \"Tingaita sei kuti tigadzirise zvinhu?\"\n\nMukuru wemabhizimusi, Zvikomborero, akavaudza kuti: \"Kana tikabata pamwe, tinokwanisa kuvandudza guta rino, asi tinofanira kutanga nechido chekubatsirana.\"\n\nPasi apa, takanga tichiona vanhu vachitsvaga mabasa, asi vachiziva kuti pane tariro shoma."
+      },
+      {
+        "chapter": 2,
+        "title": "Kubuda Pakutambudzika",
+        "content": "Tichifamba mumigwagwa yeHarare, takasangana nemhuri yaChipo, iyo yaiyemura uye ichitsvaga nzira dzekugadzirisa matambudziko emumba. Chipo akati: \"Hatigamuchire kutambudzika kwega, ticharamba tichikurudzira kuti tisashungurudzike nematambudziko atiri kuona.\""
+      },
+      {
+        "chapter": 3,
+        "title": "Rudo Rwekugadzira",
+        "content": "Vakuru vakatanga kupinza mafungiro matsva ekusimudzira guta reHarare. Kunyange zvazvo paive nezvimhingamipinyi, vanhu vakashinga uye vakatanga kugadzira mabhizimusi madiki, izvo zvakabatsira kugadzirisa upfumi hweguta.\n\nKugadzirisa zvinhu kwakaitika, uye vanhu vakatanga kuona nzira dzakajeka dzekupedzisira matambudziko avakatambira."
+      }
+    ],
+    "message": "Kutenda, kushanda pamwe chete, uye kuvimba kuchatibatsira kubudirira."
+  },
+  {
+    "title": "Chiedza Chedu",
+    "author": "Tafadzwa Mutasa",
+    "coverPath" : "assets/images/book-cover-3.png",
+    "chapters": [
+      {
+        "chapter": 1,
+        "title": "Kuputika Kwezuva",
+        "content": "Guta raChitungwiza rakatarisana nemigwagwa yakasviba, asi vanhu vemuGuta raChiedza vakavandudza pfungwa dzavo dzepamberi. Mukadzi, Tsitsi, akavaudza kuti: \"Tinofanira kutora nhanho dzekutenda kuti zvinhu zvichaita zviri nani, tichibatsirana.\""
+      },
+      {
+        "chapter": 2,
+        "title": "Zviitiko Zvitsva",
+        "content": "Pakati pemigwagwa yeChitungwiza, Tsitsi nevamwe vakavhura nzvimbo dzekudzidzisa vana uye kutsvagira masimba ekudzidza pamwe nekubatsira vana. Mudzidzisi mukuru, Tonderai, akati: \"Hupenyu hwedu huchava nani kana tikabatsira vana nekutipa mukana wokudzidza.\""
+      },
+      {
+        "chapter": 3,
+        "title": "Kubuda Pakukanganwa",
+        "content": "Tsitsi uye vamwe vakatanga kuona zvigadzirwa zvitsva zvemabhizimusi, izvo zvakavandudza guta ravo. Mune zvakaitwa, vakabudirira uye vakaramba vakaita basa ravo kwechinguva chisingaperi."
+      }
+    ],
+    "message": "Kubatsira vamwe uye kugadzira nzvimbo dzekudzidza kwevana kuchaita kuti tibudirire mune ramangwana."
+  }
+]
