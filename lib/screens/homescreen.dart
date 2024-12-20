@@ -1,7 +1,9 @@
 import 'dart:convert';
 
+import 'package:emoji_data/emoji_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:redi/components/bubble_tile.dart';
 
 import 'package:redi/components/searchbox.dart';
 import 'package:redi/constants/constants.dart';
@@ -113,27 +115,9 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Column(
-                  spacing: 5,
-                  children: [
-                    CircleAvatar(
-                      radius: AppMeasure.width / 10,
-                      child: Icon(
-                        Icons.accessible_outlined,
-                        color: Colors.black,
-                        size: 30,
-                      ),
-                    ),
-                    Text(
-                      'Fiction',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+              BubbleTile(
+                bubbleEmoji: '😇',
+                bubbleTitle: 'Fiction',
               )
             ],
           ),
