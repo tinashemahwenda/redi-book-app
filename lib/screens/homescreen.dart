@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:redi/components/navbar.dart';
+import 'package:redi/components/searchbox.dart';
+import 'package:redi/constants/constants.dart';
 import 'package:redi/models/book.dart';
 import 'package:redi/screens/chapter_page.dart';
 
@@ -68,6 +70,10 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
+                SizedBox(
+                  height: 20,
+                ),
+                Searchbox(),
                 Expanded(
                   child: ListView.builder(
                       itemCount: _books.length,
