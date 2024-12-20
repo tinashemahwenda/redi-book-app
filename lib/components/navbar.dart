@@ -9,7 +9,7 @@ class NavBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'redi',
+          'Home',
           style: TextStyle(
             fontSize: 20,
           ),

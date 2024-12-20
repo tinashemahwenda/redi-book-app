@@ -52,19 +52,21 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
-                NavBar(),
-                SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  'Library',
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Home',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50,
+                      ),
+                    ),
+                    Icon(
+                      Icons.list,
+                      size: 30,
+                    )
+                  ],
                 ),
                 Expanded(
                   child: ListView.builder(
