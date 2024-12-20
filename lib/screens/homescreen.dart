@@ -47,31 +47,40 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 20,
-                ),
-                NewHomeNavigationBar(),
-                SizedBox(
-                  height: 20,
-                ),
-                Searchbox(),
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: NewHomeNavigationBar(),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Searchbox(),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Text(
                   'Recommended for you',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
                 ),
-                Expanded(
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                  height: AppMeasure.height / 3,
                   child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
                       itemCount: _books.length,
                       itemBuilder: (context, index) {
                         final book = _books[index];
@@ -79,22 +88,16 @@ class _HomePageState extends State<HomePage> {
                           onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ChapterPage(
-                                  book: book,
-                                ),
-                              )),
+                                  builder: (context) =>
+                                      ChapterPage(book: book))),
                           child: BookTile(
-                            imageUrl: book.coverPath,
-                            bookName: book.title,
-                            author: book.author,
-                            chapters:
-                                '${book.chapters.length.toString()} Chapters',
-                          ),
+                              imageUrl: book.coverPath,
+                              bookName: book.title,
+                              author: book.author,
+                              chapters: book.chapters.toString()),
                         );
-                      }),
-                )
-              ],
-            ),
+                      })),
+            ],
           ),
         ));
   }
