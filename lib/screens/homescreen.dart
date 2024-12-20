@@ -2,13 +2,14 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:redi/components/navbar.dart';
+
 import 'package:redi/components/searchbox.dart';
 import 'package:redi/constants/constants.dart';
 import 'package:redi/models/book.dart';
 import 'package:redi/screens/chapter_page.dart';
 
 import '../components/bookTile.dart';
+import '../components/new_homenavbar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -54,26 +55,21 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Home',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 50,
-                      ),
-                    ),
-                    Icon(
-                      Icons.list,
-                      size: 30,
-                    )
-                  ],
-                ),
+                NewHomeNavigationBar(),
                 SizedBox(
                   height: 20,
                 ),
                 Searchbox(),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'Recommended for you',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
                 Expanded(
                   child: ListView.builder(
                       itemCount: _books.length,
