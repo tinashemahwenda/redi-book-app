@@ -16,6 +16,7 @@ class BubbleTile extends StatelessWidget {
         spacing: 5,
         children: [
           CircleAvatar(
+              backgroundColor: Colors.grey[200],
               radius: AppMeasure.width / 10,
               child: Text(
                 bubbleEmoji,

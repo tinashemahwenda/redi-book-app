@@ -111,11 +111,34 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
-              BubbleTile(
-                bubbleEmoji: '😇',
-                bubbleTitle: 'Fiction',
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    BubbleTile(
+                      bubbleEmoji: '😇',
+                      bubbleTitle: 'Fiction',
+                    ),
+                    BubbleTile(
+                      bubbleEmoji: '💕',
+                      bubbleTitle: 'Romance',
+                    ),
+                    BubbleTile(
+                      bubbleEmoji: '🤣',
+                      bubbleTitle: 'Humor',
+                    ),
+                    BubbleTile(
+                      bubbleEmoji: '😎',
+                      bubbleTitle: 'Classic',
+                    ),
+                    BubbleTile(
+                      bubbleEmoji: '🤩',
+                      bubbleTitle: 'Happy',
+                    ),
+                  ],
+                ),
               )
             ],
           ),

@@ -9,7 +9,7 @@ class NewHomeNavigationBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Home',
+          'Library',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 50,
