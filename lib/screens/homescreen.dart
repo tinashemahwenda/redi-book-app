@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                       bubbleTitle: 'Fiction',
                     ),
                     BubbleTile(
-                      bubbleEmoji: '💕',
+                      bubbleEmoji: '🥰',
                       bubbleTitle: 'Romance',
                     ),
                     BubbleTile(
