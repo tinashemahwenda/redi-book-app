@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:emoji_data/emoji_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:redi/components/bubble_tile.dart';
