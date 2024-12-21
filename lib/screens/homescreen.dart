@@ -9,7 +9,11 @@ import 'package:redi/models/book.dart';
 import 'package:redi/screens/chapter_page.dart';
 
 import '../components/bookTile.dart';
+<<<<<<< Updated upstream
 import '../components/new_homenavbar.dart';
+=======
+import '../components/bubble_tile.dart';
+>>>>>>> Stashed changes
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -47,12 +51,18 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
+<<<<<<< Updated upstream
+=======
+            child: Padding(
+          padding: const EdgeInsets.all(30.0),
+>>>>>>> Stashed changes
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: 20,
               ),
+<<<<<<< Updated upstream
               Padding(
                 padding: const EdgeInsets.all(30.0),
                 child: NewHomeNavigationBar(),
@@ -79,6 +89,23 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(
                   height: AppMeasure.height / 3,
+=======
+              NavBar(),
+              SizedBox(
+                height: 40,
+              ),
+              Text(
+                'Library',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Expanded(
+>>>>>>> Stashed changes
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: _books.length,
@@ -142,6 +169,6 @@ class _HomePageState extends State<HomePage> {
               )
             ],
           ),
-        ));
+        )));
   }
 }
