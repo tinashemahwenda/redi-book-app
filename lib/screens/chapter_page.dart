@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:redi/components/chapter_tile.dart';
 
+import '../constants/constants.dart';
 import '../models/book.dart';
 
 class ChapterPage extends StatelessWidget {
@@ -25,61 +27,22 @@ class ChapterPage extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Chapter ${book.chapters[0].chapter}:${book.chapters[0].title}',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 35,
-                  ),
-                ),
-                Text(
-                  '${book.chapters.length} Chapters | ${book.author}',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.black,
-                  ),
-                ),
                 SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  book.chapters[0].content.toString(),
-                  style: TextStyle(
-                    fontSize: 22,
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Chapter ${book.chapters[1].chapter}:${book.chapters[1].title}',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 35,
-                  ),
-                ),
-                Text(
-                  book.chapters[1].content.toString(),
-                  style: TextStyle(
-                    fontSize: 22,
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Chapter ${book.chapters[2].chapter}:${book.chapters[2].title}',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 35,
-                  ),
-                ),
-                Text(
-                  book.chapters[2].content.toString(),
-                  style: TextStyle(
-                    fontSize: 22,
-                  ),
-                ),
+                    height: AppMeasure.height,
+                    width: AppMeasure.width,
+                    child: ListView.builder(
+                      itemCount: book.chapters.length,
+                      itemBuilder: (context, index) {
+                        return ChapterTile(
+                          currentChapter:
+                              book.chapters[index].chapter.toString(),
+                          bookAuthor: book.author,
+                          bookContent: book.chapters[index].content,
+                          chapterLength: book.chapters.length,
+                          chapterTitle: book.chapters[index].title,
+                        );
+                      },
+                    ))
               ],
             ),
           ),
