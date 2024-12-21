@@ -28,7 +28,7 @@ class ChapterTile extends StatelessWidget {
           ),
         ),
         Text(
-          '$chapterLength Chapters | $bookAuthor',
+          '$chapterLength Chapters Remaining | $bookAuthor',
           style: TextStyle(
             fontSize: 18,
             color: Colors.black,

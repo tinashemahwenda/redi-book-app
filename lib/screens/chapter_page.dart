@@ -38,7 +38,8 @@ class ChapterPage extends StatelessWidget {
                               book.chapters[index].chapter.toString(),
                           bookAuthor: book.author,
                           bookContent: book.chapters[index].content,
-                          chapterLength: book.chapters.length,
+                          chapterLength: book.chapters.length -
+                              book.chapters[index].chapter,
                           chapterTitle: book.chapters[index].title,
                         );
                       },
