@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:redi/components/finished_task.dart';
 
 class FeaturesPage extends StatelessWidget {
   const FeaturesPage({super.key});
@@ -7,15 +8,29 @@ class FeaturesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Text('Upcoming Updates'),
-            ListTile(
-              leading: CircleAvatar(
-                child: Icon(Icons.check),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 40,
               ),
-            )
-          ],
+              Text(
+                'Upcoming Updates',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              FinishedTask(taskName: 'Recomended Books'),
+              FinishedTask(taskName: 'Hot Picks Section'),
+              FinishedTask(taskName: 'Longer Version Books'),
+            ],
+          ),
         ),
       ),
     );
