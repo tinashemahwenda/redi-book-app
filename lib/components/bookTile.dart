@@ -18,17 +18,23 @@ class BookTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20.0),
-      child: Row(
+      padding: const EdgeInsets.only(
+        left: 20.0,
+      ),
+      child: Column(
+        spacing: 10,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: AppMeasure.height / 5,
-            width: AppMeasure.width / 3,
-            color: Colors.grey,
-            child: Image.asset(imageUrl),
-          ),
-          SizedBox(
-            width: 30,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              width: AppMeasure.width / 2.5,
+              height: AppMeasure.height / 4,
+              child: Image.asset(
+                imageUrl,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +43,7 @@ class BookTile extends StatelessWidget {
                 bookName,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 18,
+                  fontSize: 16,
                 ),
               ),
               Text(
@@ -45,8 +51,7 @@ class BookTile extends StatelessWidget {
                 style: TextStyle(
                   fontStyle: FontStyle.italic,
                 ),
-              ),
-              Text(chapters),
+              )
             ],
           ),
         ],

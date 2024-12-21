@@ -1,12 +1,15 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:redi/components/navbar.dart';
+import 'package:redi/components/bubble_tile.dart';
+
+import 'package:redi/components/searchbox.dart';
+import 'package:redi/constants/constants.dart';
 import 'package:redi/models/book.dart';
 import 'package:redi/screens/chapter_page.dart';
 
 import '../components/bookTile.dart';
+import '../components/new_homenavbar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -44,30 +47,40 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 20,
-                ),
-                NavBar(),
-                SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  'Library',
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: NewHomeNavigationBar(),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Searchbox(),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Text(
+                  'Recommended for you',
                   style: TextStyle(
-                    fontSize: 40,
                     fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
                 ),
-                SizedBox(
-                  height: 40,
-                ),
-                Expanded(
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                  height: AppMeasure.height / 3,
                   child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
                       itemCount: _books.length,
                       itemBuilder: (context, index) {
                         final book = _books[index];
@@ -75,22 +88,59 @@ class _HomePageState extends State<HomePage> {
                           onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ChapterPage(
-                                  book: book,
-                                ),
-                              )),
+                                  builder: (context) =>
+                                      ChapterPage(book: book))),
                           child: BookTile(
-                            imageUrl: book.coverPath,
-                            bookName: book.title,
-                            author: book.author,
-                            chapters:
-                                '${book.chapters.length.toString()} Chapters',
-                          ),
+                              imageUrl: book.coverPath,
+                              bookName: book.title,
+                              author: book.author,
+                              chapters: book.chapters.toString()),
                         );
-                      }),
-                )
-              ],
-            ),
+                      })),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Text(
+                  'Hottest Reading Lists',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    BubbleTile(
+                      bubbleEmoji: '😇',
+                      bubbleTitle: 'Fiction',
+                    ),
+                    BubbleTile(
+                      bubbleEmoji: '💕',
+                      bubbleTitle: 'Romance',
+                    ),
+                    BubbleTile(
+                      bubbleEmoji: '🤣',
+                      bubbleTitle: 'Humor',
+                    ),
+                    BubbleTile(
+                      bubbleEmoji: '😎',
+                      bubbleTitle: 'Classic',
+                    ),
+                    BubbleTile(
+                      bubbleEmoji: '🤩',
+                      bubbleTitle: 'Happy',
+                    ),
+                  ],
+                ),
+              )
+            ],
           ),
         ));
   }
