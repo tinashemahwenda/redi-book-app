@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:redi/screens/features.dart';
 
 class NewHomeNavigationBar extends StatelessWidget {
   const NewHomeNavigationBar({super.key});
@@ -15,9 +16,13 @@ class NewHomeNavigationBar extends StatelessWidget {
             fontSize: 50,
           ),
         ),
-        Icon(
-          Icons.list,
-          size: 30,
+        GestureDetector(
+          onTap: () => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => FeaturesPage())),
+          child: Icon(
+            Icons.list,
+            size: 30,
+          ),
         )
       ],
     );
