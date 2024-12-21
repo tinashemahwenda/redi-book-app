@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class UpcomingTask extends StatelessWidget {
+class UpcomingTasks extends StatelessWidget {
   final String taskName;
-  const UpcomingTask({super.key, required this.taskName});
+  const UpcomingTasks({super.key, required this.taskName});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: CircleAvatar(
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.yellow,
         radius: 15,
         child: Icon(
-          Icon.warning,
-          color: Colors.white,
+          Icons.warning,
+          color: Colors.black,
           size: 15,
         ),
       ),
