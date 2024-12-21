@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:redi/screens/book_listing.dart';
 
 import '../constants/constants.dart';
 
@@ -15,15 +16,19 @@ class BubbleTile extends StatelessWidget {
       child: Column(
         spacing: 5,
         children: [
-          CircleAvatar(
-              backgroundColor: Colors.grey[200],
-              radius: AppMeasure.width / 10,
-              child: Text(
-                bubbleEmoji,
-                style: TextStyle(
-                  fontSize: 30,
-                ),
-              )),
+          GestureDetector(
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => BookListing())),
+            child: CircleAvatar(
+                backgroundColor: Colors.grey[200],
+                radius: AppMeasure.width / 10,
+                child: Text(
+                  bubbleEmoji,
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
+                )),
+          ),
           Text(
             bubbleTitle,
             style: TextStyle(
