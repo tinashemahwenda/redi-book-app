@@ -51,35 +51,6 @@ class ChapterPage extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                Text(
-                  'Chapter ${book.chapters[1].chapter}:${book.chapters[1].title}',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 35,
-                  ),
-                ),
-                Text(
-                  book.chapters[1].content.toString(),
-                  style: TextStyle(
-                    fontSize: 22,
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Chapter ${book.chapters[2].chapter}:${book.chapters[2].title}',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 35,
-                  ),
-                ),
-                Text(
-                  book.chapters[2].content.toString(),
-                  style: TextStyle(
-                    fontSize: 22,
-                  ),
-                ),
               ],
             ),
           ),
