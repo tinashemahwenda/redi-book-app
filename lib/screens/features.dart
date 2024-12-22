@@ -9,6 +9,7 @@ class FeaturesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20),
@@ -59,6 +60,7 @@ class FeaturesPage extends StatelessWidget {
               ),
               UpcomingTasks(taskName: 'Search Bar'),
               UpcomingTasks(taskName: 'Add a book listing page'),
+              UpcomingTasks(taskName: 'Redesign on the chapter page'),
               Text(
                 'v0.0.5',
                 style: TextStyle(
@@ -69,7 +71,7 @@ class FeaturesPage extends StatelessWidget {
               UpcomingTasks(taskName: 'Hot Picks Functionality'),
               UpcomingTasks(taskName: 'Add to favourites/reading list'),
               Text(
-                'v0.0.5',
+                'v0.0.6',
                 style: TextStyle(
                   decoration: TextDecoration.underline,
                   fontSize: 16,
