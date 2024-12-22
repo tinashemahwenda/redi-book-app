@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:redi/constants/constants.dart';
 import 'package:redi/screens/homescreen.dart';
 
@@ -11,6 +12,10 @@ class RediApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.dark,
+    ));
     return Builder(builder: (context) {
       AppMeasure.width = MediaQuery.of(context).size.width;
       AppMeasure.height = MediaQuery.of(context).size.height;
