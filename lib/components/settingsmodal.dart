@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:screen_brightness/screen_brightness.dart';
 
 import '../constants/constants.dart';
 
-class SettingsModal extends StatelessWidget {
+class SettingsModal extends StatefulWidget {
   const SettingsModal({super.key});
 
+  @override
+  State<SettingsModal> createState() => _SettingsModalState();
+}
+
+class _SettingsModalState extends State<SettingsModal> {
+  double _brightness = 0.5;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -42,8 +49,13 @@ class SettingsModal extends StatelessWidget {
                   Container(
                     child: Slider(
                       activeColor: Colors.black,
-                      value: 0,
-                      onChanged: (value) => 100,
+                      value: _brightness,
+                      onChanged: (value) => setState(() {
+                        _brightness = value;
+
+                        ScreenBrightness.instance
+                            .setSystemScreenBrightness(_brightness);
+                      }),
                     ),
                   ),
                   Text(
