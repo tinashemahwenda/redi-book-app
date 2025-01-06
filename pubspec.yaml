@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   emoji_data: ^1.0.0
   lottie: ^3.3.0
+  screen_brightness: ^2.0.1
 
 dev_dependencies:
   flutter_test:
