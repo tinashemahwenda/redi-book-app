@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:redi/components/chapter_tile.dart';
 
+import '../components/settingsmodal.dart';
 import '../constants/constants.dart';
 import '../models/book.dart';
 
@@ -17,11 +18,7 @@ class _ChapterPageState extends State<ChapterPage> {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext context) {
-          return Container(
-            width: AppMeasure.width,
-            height: AppMeasure.height / 3,
-            color: Colors.white,
-          );
+          return SettingsModal();
         });
   }
 
