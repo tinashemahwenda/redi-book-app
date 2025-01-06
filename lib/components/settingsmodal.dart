@@ -50,6 +50,8 @@ class _SettingsModalState extends State<SettingsModal> {
                     child: Slider(
                       activeColor: Colors.black,
                       value: _brightness,
+                      min: 0,
+                      max: 1,
                       onChanged: (value) => setState(() {
                         _brightness = value;
 
