@@ -21,9 +21,15 @@ class ChapterPage extends StatelessWidget {
                 SizedBox(
                   height: 30,
                 ),
-                GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Icon(Icons.arrow_back_ios_new)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: Icon(Icons.arrow_back_ios_new)),
+                    Icon(Icons.settings)
+                  ],
+                ),
                 SizedBox(
                   height: 20,
                 ),
