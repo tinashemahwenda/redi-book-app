@@ -4,9 +4,25 @@ import 'package:redi/components/chapter_tile.dart';
 import '../constants/constants.dart';
 import '../models/book.dart';
 
-class ChapterPage extends StatelessWidget {
+class ChapterPage extends StatefulWidget {
   final Book book;
   const ChapterPage({super.key, required this.book});
+
+  @override
+  State<ChapterPage> createState() => _ChapterPageState();
+}
+
+class _ChapterPageState extends State<ChapterPage> {
+  void showSettingsModal() {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            width: AppMeasure.width,
+            height: AppMeasure.height / 3,
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +43,8 @@ class ChapterPage extends StatelessWidget {
                     GestureDetector(
                         onTap: () => Navigator.pop(context),
                         child: Icon(Icons.arrow_back_ios_new)),
-                    Icon(Icons.settings)
+                    GestureDetector(
+                        onTap: showSettingsModal, child: Icon(Icons.settings))
                   ],
                 ),
                 SizedBox(
@@ -37,15 +54,15 @@ class ChapterPage extends StatelessWidget {
                     height: AppMeasure.height,
                     width: AppMeasure.width,
                     child: ListView.builder(
-                      itemCount: book.chapters.length,
+                      itemCount: widget.book.chapters.length,
                       itemBuilder: (context, index) {
                         return ChapterTile(
                           currentChapter:
-                              book.chapters[index].chapter.toString(),
-                          bookAuthor: book.author,
-                          bookContent: book.chapters[index].content,
-                          chapterLength: book.chapters.length,
-                          chapterTitle: book.chapters[index].title,
+                              widget.book.chapters[index].chapter.toString(),
+                          bookAuthor: widget.book.author,
+                          bookContent: widget.book.chapters[index].content,
+                          chapterLength: widget.book.chapters.length,
+                          chapterTitle: widget.book.chapters[index].title,
                         );
                       },
                     ))
