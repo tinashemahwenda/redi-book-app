@@ -7,11 +7,21 @@ class SettingsModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: AppMeasure.width,
-      height: AppMeasure.height / 3,
-      color: Colors.white,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(40),
+      child: Container(
+        width: AppMeasure.width,
+        height: AppMeasure.height / 3,
+        color: Colors.white,
+        child: Column(
+          children: [
+            Text(
+              'Themes & Settings',
+              style: TextStyle(fontFamily: 'Garomond-Bold'),
+            )
+          ],
+        ),
+      ),
     );
-    ;
   }
 }
