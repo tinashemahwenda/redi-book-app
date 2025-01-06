@@ -20,6 +20,7 @@ class _ChapterPageState extends State<ChapterPage> {
           return Container(
             width: AppMeasure.width,
             height: AppMeasure.height / 3,
+            color: Colors.white,
           );
         });
   }
