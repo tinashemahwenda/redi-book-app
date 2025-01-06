@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:redi/components/chapter_tile.dart';
 
+import '../components/back_button.dart';
 import '../constants/constants.dart';
 import '../models/book.dart';
 
@@ -21,9 +22,7 @@ class ChapterPage extends StatelessWidget {
                 SizedBox(
                   height: 30,
                 ),
-                GestureDetector(
-                    onTap: () => Navigator.pop(context),
-                    child: Icon(Icons.arrow_back_ios_new)),
+                GoBackButton(),
                 SizedBox(
                   height: 20,
                 ),
@@ -38,7 +37,8 @@ class ChapterPage extends StatelessWidget {
                               book.chapters[index].chapter.toString(),
                           bookAuthor: book.author,
                           bookContent: book.chapters[index].content,
-                          chapterLength: book.chapters.length,
+                          chapterLength: book.chapters.length -
+                              book.chapters[index].chapter,
                           chapterTitle: book.chapters[index].title,
                         );
                       },
