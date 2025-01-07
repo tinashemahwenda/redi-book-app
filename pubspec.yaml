@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   emoji_data: ^1.0.0
   lottie: ^3.3.0
-  brightness_pro: ^0.0.5
+  
   
 
 dev_dependencies:

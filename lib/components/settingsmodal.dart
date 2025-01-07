@@ -56,8 +56,7 @@ class _SettingsModalState extends State<SettingsModal> {
                         _brightness = value;
 
                         try {
-                          ScreenBrightness.instance
-                              .setSystemScreenBrightness(_brightness);
+                          ScreenBrightness().setScreenBrightness(_brightness);
                         } catch (e) {
                           print('Error in slider $e');
                         }
