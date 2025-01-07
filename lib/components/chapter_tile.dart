@@ -6,6 +6,7 @@ class ChapterTile extends StatelessWidget {
   final String bookAuthor;
   final int chapterLength;
   final String bookContent;
+  final double chapterSize;
   const ChapterTile({
     super.key,
     required this.currentChapter,
@@ -13,6 +14,7 @@ class ChapterTile extends StatelessWidget {
     required this.bookContent,
     required this.chapterLength,
     required this.chapterTitle,
+    required this.chapterSize,
   });
 
   @override
@@ -40,7 +42,7 @@ class ChapterTile extends StatelessWidget {
         Text(
           bookContent,
           style: TextStyle(
-            fontSize: 22,
+            fontSize: chapterSize,
           ),
         ),
         SizedBox(
