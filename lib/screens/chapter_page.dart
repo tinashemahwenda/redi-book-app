@@ -212,29 +212,32 @@ class _ChapterPageState extends State<ChapterPage> {
                             ),
                           ),
                         ),
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                width: 1,
-                                color: Colors.black,
-                              )),
-                          child: Column(
-                            children: [
-                              Text(
-                                'Aa',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  fontFamily: '',
+                        GestureDetector(
+                          onTap: sansFont,
+                          child: Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(
+                                  width: 1,
+                                  color: Colors.black,
+                                )),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Aa',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    fontFamily: '',
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                'Sans Default',
-                                style: TextStyle(fontFamily: ''),
-                              ),
-                            ],
+                                Text(
+                                  'Sans Default',
+                                  style: TextStyle(fontFamily: ''),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
