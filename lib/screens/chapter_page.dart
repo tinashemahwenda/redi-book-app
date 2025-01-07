@@ -25,7 +25,7 @@ class _ChapterPageState extends State<ChapterPage> {
 
   void decreaseFontSize() {
     setState(() {
-      textSize = 14;
+      textSize = 16;
       print('Text Size: $textSize');
     });
   }
@@ -102,23 +102,26 @@ class _ChapterPageState extends State<ChapterPage> {
                         Row(
                           spacing: 10,
                           children: [
-                            Container(
-                              //padding: EdgeInsets.all(10),
-                              width: AppMeasure.width / 10,
-                              height: AppMeasure.height / 20,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                    width: 1,
-                                    color: Colors.black,
-                                  )),
-                              child: Center(
-                                  child: Text(
-                                'A',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                ),
-                              )),
+                            GestureDetector(
+                              onTap: decreaseFontSize,
+                              child: Container(
+                                //padding: EdgeInsets.all(10),
+                                width: AppMeasure.width / 10,
+                                height: AppMeasure.height / 20,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      width: 1,
+                                      color: Colors.black,
+                                    )),
+                                child: Center(
+                                    child: Text(
+                                  'A',
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                  ),
+                                )),
+                              ),
                             ),
                             Container(
                               //padding: EdgeInsets.all(10),
