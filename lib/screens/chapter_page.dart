@@ -16,6 +16,20 @@ class ChapterPage extends StatefulWidget {
 class _ChapterPageState extends State<ChapterPage> {
   double textSize = 20;
   double _brightness = 0.5;
+  String fontFamily = 'Garamond';
+
+  void garamondFont() {
+    setState(() {
+      fontFamily = 'Garamond';
+    });
+  }
+
+  void sansFont() {
+    setState(() {
+      fontFamily = '';
+    });
+  }
+
   void increaseFontSize() {
     setState(() {
       textSize = 28;
@@ -174,25 +188,28 @@ class _ChapterPageState extends State<ChapterPage> {
                     Row(
                       spacing: 10,
                       children: [
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                width: 1,
-                                color: Colors.black,
-                              )),
-                          child: Column(
-                            children: [
-                              Text(
-                                'Aa',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                        GestureDetector(
+                          onTap: garamondFont,
+                          child: Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(
+                                  width: 1,
+                                  color: Colors.black,
+                                )),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Aa',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
                                 ),
-                              ),
-                              Text('Redi Default'),
-                            ],
+                                Text('Redi Default'),
+                              ],
+                            ),
                           ),
                         ),
                         Container(
@@ -264,6 +281,7 @@ class _ChapterPageState extends State<ChapterPage> {
                       itemCount: widget.book.chapters.length,
                       itemBuilder: (context, index) {
                         return ChapterTile(
+                          textFamily: fontFamily,
                           chapterSize: textSize,
                           currentChapter:
                               widget.book.chapters[index].chapter.toString(),
