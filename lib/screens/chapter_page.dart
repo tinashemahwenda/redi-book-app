@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redi/components/chapter_tile.dart';
-import 'package:screen_brightness/screen_brightness.dart';
+import 'package:redi/components/settingsmodal.dart';
 
 import '../constants/constants.dart';
 import '../models/book.dart';
@@ -15,7 +15,7 @@ class ChapterPage extends StatefulWidget {
 
 class _ChapterPageState extends State<ChapterPage> {
   double textSize = 20;
-  double _brightness = 0.5;
+
   String fontFamily = 'Garamond';
 
   void garamondFont() {
@@ -87,24 +87,7 @@ class _ChapterPageState extends State<ChapterPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Container(
-                          child: Slider(
-                            activeColor: Colors.black,
-                            value: _brightness,
-                            min: 0,
-                            max: 1,
-                            onChanged: (value) => setState(() {
-                              _brightness = value;
-
-                              try {
-                                ScreenBrightness()
-                                    .setScreenBrightness(_brightness);
-                              } catch (e) {
-                                print('Error in slider $e');
-                              }
-                            }),
-                          ),
-                        ),
+                        BrightnessControl(),
                         Text(
                           'Text Size',
                           style: TextStyle(
