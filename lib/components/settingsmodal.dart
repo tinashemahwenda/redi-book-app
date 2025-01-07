@@ -9,7 +9,7 @@ class BrightnessControl extends StatefulWidget {
 }
 
 class _BrightnessControlState extends State<BrightnessControl> {
-  double _brightness = 0.5;
+  double _brightness = 0.1;
   @override
   Widget build(BuildContext context) {
     return Container(
