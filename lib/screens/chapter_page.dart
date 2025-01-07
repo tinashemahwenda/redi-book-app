@@ -123,17 +123,20 @@ class _ChapterPageState extends State<ChapterPage> {
                                 )),
                               ),
                             ),
-                            Container(
-                              //padding: EdgeInsets.all(10),
-                              width: AppMeasure.width / 10,
-                              height: AppMeasure.height / 20,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                    width: 1,
-                                    color: Colors.black,
-                                  )),
-                              child: Center(child: Text('A')),
+                            GestureDetector(
+                              onTap: defaultFontSize,
+                              child: Container(
+                                //padding: EdgeInsets.all(10),
+                                width: AppMeasure.width / 10,
+                                height: AppMeasure.height / 20,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      width: 1,
+                                      color: Colors.black,
+                                    )),
+                                child: Center(child: Text('A')),
+                              ),
                             ),
                             GestureDetector(
                               onTap: increaseFontSize,
