@@ -220,27 +220,6 @@ class _ChapterPageState extends State<ChapterPage> {
                             ],
                           ),
                         ),
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                width: 1,
-                                color: Colors.black,
-                              )),
-                          child: Column(
-                            children: [
-                              Text(
-                                'Aa',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                ),
-                              ),
-                              Text('Redi Default'),
-                            ],
-                          ),
-                        ),
                       ],
                     ),
                     SizedBox(height: 20),
