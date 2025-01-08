@@ -14,6 +14,7 @@ class ChapterPage extends StatefulWidget {
 }
 
 class _ChapterPageState extends State<ChapterPage> {
+  //Color iconColor = Colors.white;
   double textSize = 20;
   Color bgColor = Colors.white;
   Color textColor = Colors.black;
@@ -185,9 +186,14 @@ class _ChapterPageState extends State<ChapterPage> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(50),
                                 child: Container(
-                                  width: 20,
-                                  height: 20,
+                                  width: 30,
+                                  height: 30,
                                   color: Colors.brown,
+                                  child: Icon(
+                                    Icons.check,
+                                    size: 16,
+                                    color: textColor,
+                                  ),
                                 ),
                               ),
                             ),
@@ -196,8 +202,8 @@ class _ChapterPageState extends State<ChapterPage> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(50),
                                 child: Container(
-                                  width: 20,
-                                  height: 20,
+                                  width: 30,
+                                  height: 30,
                                   color: Colors.black,
                                 ),
                               ),
@@ -207,8 +213,8 @@ class _ChapterPageState extends State<ChapterPage> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(50),
                                 child: Container(
-                                  width: 20,
-                                  height: 20,
+                                  width: 30,
+                                  height: 30,
                                   decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(50),
