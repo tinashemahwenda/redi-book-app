@@ -154,7 +154,45 @@ class _ChapterPageState extends State<ChapterPage> {
                                   ),
                                 )),
                               ),
-                            )
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(50),
+                              child: Container(
+                                width: 20,
+                                height: 20,
+                                color: Colors.brown,
+                              ),
+                            ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(50),
+                              child: Container(
+                                width: 20,
+                                height: 20,
+                                color: Colors.black,
+                              ),
+                            ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(50),
+                              child: Container(
+                                width: 20,
+                                height: 20,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(50),
+                                    border: Border.all(
+                                      width: 1,
+                                      color: Colors.black,
+                                    )),
+                              ),
+                            ),
+                            Container(
+                              width: 20,
+                              height: 20,
+                              color: Colors.white,
+                            ),
                           ],
                         )
                       ],
