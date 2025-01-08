@@ -28,14 +28,14 @@ class ChapterTile extends StatelessWidget {
           'Chapter $currentChapter:$chapterTitle',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 35,
+            fontSize: chapterSize * 1.4,
             fontFamily: textFamily,
           ),
         ),
         Text(
           '$chapterLength Chapters Remaining | $bookAuthor',
           style: TextStyle(
-            fontSize: 18,
+            fontSize: chapterSize / 1.5,
             color: Colors.black,
             fontFamily: textFamily,
           ),
