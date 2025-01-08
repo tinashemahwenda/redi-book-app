@@ -272,17 +272,17 @@ class _ChapterPageState extends State<ChapterPage> {
                           textFamily: fontFamily,
                           chapterSize: textSize,
                           currentChapter:
-                              book.chapters[index].chapter.toString(),
-                          bookAuthor: book.author,
-                          bookContent: book.chapters[index].content,
-                          chapterLength: book.chapters.length -
-                              book.chapters[index].chapter,
-                          chapterTitle: book.chapters[index].title,
-                          widget.book.chapters[index].chapter.toString(),
+                              widget.book.chapters[index].chapter.toString(),
                           bookAuthor: widget.book.author,
                           bookContent: widget.book.chapters[index].content,
-                          chapterLength: widget.book.chapters.length,
+                          chapterLength: widget.book.chapters.length -
+                              widget.book.chapters[index].chapter,
                           chapterTitle: widget.book.chapters[index].title,
+
+                          /*bookAuthor: widget.book.author,
+                          bookContent: widget.book.chapters[index].content,
+                          chapterLength: widget.book.chapters.length,
+                          chapterTitle: widget.book.chapters[index].title,*/
                         );
                       },
                     ))
