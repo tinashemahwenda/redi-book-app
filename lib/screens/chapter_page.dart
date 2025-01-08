@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:redi/components/chapter_tile.dart';
 import 'package:redi/components/settingsmodal.dart';
 
+import '../components/back_button.dart';
 import '../constants/constants.dart';
 import '../models/book.dart';
 
@@ -257,6 +258,7 @@ class _ChapterPageState extends State<ChapterPage> {
                         onTap: showSettingsModal, child: Icon(Icons.settings))
                   ],
                 ),
+
                 SizedBox(
                   height: 20,
                 ),
@@ -270,11 +272,13 @@ class _ChapterPageState extends State<ChapterPage> {
                           textFamily: fontFamily,
                           chapterSize: textSize,
                           currentChapter:
+
                               widget.book.chapters[index].chapter.toString(),
                           bookAuthor: widget.book.author,
                           bookContent: widget.book.chapters[index].content,
                           chapterLength: widget.book.chapters.length,
                           chapterTitle: widget.book.chapters[index].title,
+
                         );
                       },
                     ))
