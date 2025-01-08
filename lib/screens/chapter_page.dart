@@ -249,16 +249,6 @@ class _ChapterPageState extends State<ChapterPage> {
                   height: 30,
                 ),
                 GoBackButton(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                        onTap: () => Navigator.pop(context),
-                        child: Icon(Icons.arrow_back_ios_new)),
-                    GestureDetector(
-                        onTap: showSettingsModal, child: Icon(Icons.settings))
-                  ],
-                ),
                 SizedBox(
                   height: 20,
                 ),
