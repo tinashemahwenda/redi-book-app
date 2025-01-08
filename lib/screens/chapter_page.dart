@@ -15,8 +15,30 @@ class ChapterPage extends StatefulWidget {
 
 class _ChapterPageState extends State<ChapterPage> {
   double textSize = 20;
+  Color bgColor = Colors.white;
+  Color textColor = Colors.black;
 
   String fontFamily = 'Garamond';
+  void changeBgToBlack() {
+    setState(() {
+      bgColor = Colors.black;
+      textColor = Colors.white;
+    });
+  }
+
+  void changeBgToBrown() {
+    setState(() {
+      bgColor = Colors.brown;
+      textColor = Colors.white;
+    });
+  }
+
+  void changeBgToWhite() {
+    setState(() {
+      bgColor = Colors.white;
+      textColor = Colors.black;
+    });
+  }
 
   void garamondFont() {
     setState(() {
@@ -158,34 +180,43 @@ class _ChapterPageState extends State<ChapterPage> {
                             SizedBox(
                               width: 20,
                             ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(50),
-                              child: Container(
-                                width: 20,
-                                height: 20,
-                                color: Colors.brown,
+                            GestureDetector(
+                              onTap: changeBgToBrown,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(50),
+                                child: Container(
+                                  width: 20,
+                                  height: 20,
+                                  color: Colors.brown,
+                                ),
                               ),
                             ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(50),
-                              child: Container(
-                                width: 20,
-                                height: 20,
-                                color: Colors.black,
+                            GestureDetector(
+                              onTap: changeBgToBlack,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(50),
+                                child: Container(
+                                  width: 20,
+                                  height: 20,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(50),
-                              child: Container(
-                                width: 20,
-                                height: 20,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(50),
-                                    border: Border.all(
-                                      width: 1,
-                                      color: Colors.black,
-                                    )),
+                            GestureDetector(
+                              onTap: changeBgToWhite,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(50),
+                                child: Container(
+                                  width: 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(50),
+                                      border: Border.all(
+                                        width: 1,
+                                        color: Colors.black,
+                                      )),
+                                ),
                               ),
                             ),
                             Container(
@@ -275,7 +306,7 @@ class _ChapterPageState extends State<ChapterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: bgColor,
         body: Padding(
           padding: const EdgeInsets.all(30.0),
           child: SingleChildScrollView(
@@ -305,6 +336,7 @@ class _ChapterPageState extends State<ChapterPage> {
                       itemCount: widget.book.chapters.length,
                       itemBuilder: (context, index) {
                         return ChapterTile(
+                          textColor: textColor,
                           textFamily: fontFamily,
                           chapterSize: textSize,
                           currentChapter:

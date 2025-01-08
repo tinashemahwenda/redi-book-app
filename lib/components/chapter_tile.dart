@@ -8,6 +8,7 @@ class ChapterTile extends StatelessWidget {
   final String bookContent;
   final double chapterSize;
   final String textFamily;
+  final Color textColor;
   const ChapterTile({
     super.key,
     required this.textFamily,
@@ -17,6 +18,7 @@ class ChapterTile extends StatelessWidget {
     required this.chapterLength,
     required this.chapterTitle,
     required this.chapterSize,
+    required this.textColor,
   });
 
   @override
@@ -30,13 +32,14 @@ class ChapterTile extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: chapterSize * 1.4,
             fontFamily: textFamily,
+            color: textColor,
           ),
         ),
         Text(
           '$chapterLength Chapters Remaining | $bookAuthor',
           style: TextStyle(
             fontSize: chapterSize / 1.5,
-            color: Colors.black,
+            color: textColor,
             fontFamily: textFamily,
           ),
         ),
@@ -48,6 +51,7 @@ class ChapterTile extends StatelessWidget {
           style: TextStyle(
             fontSize: chapterSize,
             fontFamily: textFamily,
+            color: textColor,
           ),
         ),
         SizedBox(
