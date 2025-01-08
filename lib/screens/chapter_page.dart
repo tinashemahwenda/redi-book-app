@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:redi/components/chapter_tile.dart';
 import 'package:redi/components/settingsmodal.dart';
 
-import '../components/back_button.dart';
 import '../constants/constants.dart';
 import '../models/book.dart';
 
@@ -248,7 +247,16 @@ class _ChapterPageState extends State<ChapterPage> {
                 SizedBox(
                   height: 30,
                 ),
-                GoBackButton(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: Icon(Icons.arrow_back_ios_new)),
+                    GestureDetector(
+                        onTap: showSettingsModal, child: Icon(Icons.settings))
+                  ],
+                ),
                 SizedBox(
                   height: 20,
                 ),
