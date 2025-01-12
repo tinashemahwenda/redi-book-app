@@ -23,6 +23,17 @@ class _ChapterPageState extends State<ChapterPage> {
   double progressValue = 0.0;
   ScrollController scrollController = ScrollController();
 
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(() {
+      progressValue =
+          scrollController.offset / scrollController.position.maxScrollExtent;
+
+      setState(() {});
+    });
+  }
+
   void changeBgToBlack() {
     setState(() {
       bgColor = Colors.black;
