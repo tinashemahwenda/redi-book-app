@@ -330,7 +330,6 @@ class _ChapterPageState extends State<ChapterPage> {
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: SingleChildScrollView(
-          controller: scrollController,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -351,9 +350,10 @@ class _ChapterPageState extends State<ChapterPage> {
                 height: 20,
               ),
               SizedBox(
-                  height: AppMeasure.height,
+                  height: AppMeasure.height / 1.3,
                   width: AppMeasure.width,
                   child: ListView.builder(
+                    controller: scrollController,
                     itemCount: widget.book.chapters.length,
                     itemBuilder: (context, index) {
                       return ChapterTile(
@@ -380,7 +380,7 @@ class _ChapterPageState extends State<ChapterPage> {
         ),
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.only(bottom: 40.0, left: 20, right: 20),
         child: LinearProgressIndicator(
           color: Colors.black,
           value: progressValue,
