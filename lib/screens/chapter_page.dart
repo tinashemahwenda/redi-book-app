@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:redi/components/chapter_tile.dart';
 import 'package:redi/components/settingsmodal.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants/constants.dart';
 import '../models/book.dart';
@@ -26,12 +27,23 @@ class _ChapterPageState extends State<ChapterPage> {
   @override
   void initState() {
     super.initState();
+    _loadScrollPosition();
     scrollController.addListener(() {
       progressValue =
           scrollController.offset / scrollController.position.maxScrollExtent;
 
       setState(() {});
     });
+  }
+
+  Future<void> _loadScrollPosition() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      progressValue = prefs.getDouble('scrollPosition') ?? 0.0;
+    });
+
+    scrollController.jumpTo(progressValue);
   }
 
   void changeBgToBlack() {
