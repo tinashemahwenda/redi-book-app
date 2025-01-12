@@ -18,8 +18,10 @@ class _ChapterPageState extends State<ChapterPage> {
   double textSize = 20;
   Color bgColor = Colors.white;
   Color textColor = Colors.black;
-
   String fontFamily = 'Garamond';
+
+  ScrollController scrollController = ScrollController();
+
   void changeBgToBlack() {
     setState(() {
       bgColor = Colors.black;
@@ -316,6 +318,7 @@ class _ChapterPageState extends State<ChapterPage> {
         body: Padding(
           padding: const EdgeInsets.all(30.0),
           child: SingleChildScrollView(
+            controller: scrollController,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
