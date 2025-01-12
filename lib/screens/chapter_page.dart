@@ -24,7 +24,9 @@ class _ChapterPageState extends State<ChapterPage> {
   String fontFamily = 'Garamond';
 
   double progressValue = 0.0;
+
   ScrollController scrollController = ScrollController();
+  double _savedScrollPosition = 0.0;
 
   @override
   void initState() {
@@ -33,6 +35,7 @@ class _ChapterPageState extends State<ChapterPage> {
     scrollController.addListener(() {
       progressValue =
           scrollController.offset / scrollController.position.maxScrollExtent;
+
       _saveScrollPosition();
 
       setState(() {});
@@ -43,21 +46,15 @@ class _ChapterPageState extends State<ChapterPage> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     setState(() {
-      progressValue = prefs.getDouble('scrollPosition') ?? 0.0;
+      _savedScrollPosition = prefs.getDouble('scrollPosition') ?? 0.0;
     });
 
-    scrollController.jumpTo(progressValue);
+    scrollController.jumpTo(_savedScrollPosition);
   }
 
   Future<void> _saveScrollPosition() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setDouble('scrollPositon', scrollController.offset);
-  }
-
-  @override
-  void dispose() {
-    scrollController.dispose();
-    super.dispose();
   }
 
   void changeBgToBlack() {
