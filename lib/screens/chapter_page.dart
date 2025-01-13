@@ -364,10 +364,16 @@ class _ChapterPageState extends State<ChapterPage> {
                 children: [
                   GestureDetector(
                       onTap: () => Navigator.pop(context),
-                      child: Icon(Icons.arrow_back_ios_new)),
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: textColor,
+                      )),
                   GestureDetector(
                       onTap: showSettingsModal,
-                      child: Icon(Icons.settings_suggest_rounded))
+                      child: Icon(
+                        Icons.settings_suggest_rounded,
+                        color: textColor,
+                      ))
                 ],
               ),
               SizedBox(
