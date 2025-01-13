@@ -66,9 +66,9 @@ class _ChapterPageState extends State<ChapterPage> {
     });
   }
 
-  String progressPercentage() {
+  void progressPercentage() {
     _progressPercentage = progressValue * 100;
-    return _progressPercentage.toString();
+    _progressPercentage.round();
   }
 
   void changeBgToBrown() {
@@ -418,7 +418,7 @@ class _ChapterPageState extends State<ChapterPage> {
         ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.only(bottom: 40.0, left: 20, right: 20),
-          child: progressPercentage() == 100 ? Text('Hello') : Text('Finished'),
+          child: Text(''),
         ));
   }
 }
