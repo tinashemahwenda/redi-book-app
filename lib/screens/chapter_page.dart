@@ -366,7 +366,8 @@ class _ChapterPageState extends State<ChapterPage> {
                       onTap: () => Navigator.pop(context),
                       child: Icon(Icons.arrow_back_ios_new)),
                   GestureDetector(
-                      onTap: showSettingsModal, child: Icon(Icons.settings))
+                      onTap: showSettingsModal,
+                      child: Icon(Icons.settings_suggest_rounded))
                 ],
               ),
               SizedBox(
