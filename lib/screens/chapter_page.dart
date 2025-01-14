@@ -333,73 +333,74 @@ class _ChapterPageState extends State<ChapterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: bgColor,
-        body: Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                        onTap: () => Navigator.pop(context),
-                        child: Icon(
-                          Icons.arrow_back_ios_new,
-                          color: textColor,
-                        )),
-                    GestureDetector(
-                        onTap: showSettingsModal,
-                        child: Icon(
-                          Icons.settings_suggest_rounded,
-                          color: textColor,
-                        ))
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                    height: AppMeasure.height / 1.3,
-                    width: AppMeasure.width,
-                    child: ListView.builder(
-                      controller: scrollController,
-                      itemCount: widget.book.chapters.length,
-                      itemBuilder: (context, index) {
-                        return ChapterTile(
-                          textColor: textColor,
-                          textFamily: fontFamily,
-                          chapterSize: textSize,
-                          currentChapter:
-                              widget.book.chapters[index].chapter.toString(),
-                          bookAuthor: widget.book.author,
-                          bookContent: widget.book.chapters[index].content,
-                          chapterLength: widget.book.chapters.length -
-                              widget.book.chapters[index].chapter,
-                          chapterTitle: widget.book.chapters[index].title,
+      backgroundColor: bgColor,
+      body: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: textColor,
+                      )),
+                  GestureDetector(
+                      onTap: showSettingsModal,
+                      child: Icon(
+                        Icons.settings_suggest_rounded,
+                        color: textColor,
+                      ))
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                  height: AppMeasure.height / 1.3,
+                  width: AppMeasure.width,
+                  child: ListView.builder(
+                    controller: scrollController,
+                    itemCount: widget.book.chapters.length,
+                    itemBuilder: (context, index) {
+                      return ChapterTile(
+                        textColor: textColor,
+                        textFamily: fontFamily,
+                        chapterSize: textSize,
+                        currentChapter:
+                            widget.book.chapters[index].chapter.toString(),
+                        bookAuthor: widget.book.author,
+                        bookContent: widget.book.chapters[index].content,
+                        chapterLength: widget.book.chapters.length -
+                            widget.book.chapters[index].chapter,
+                        chapterTitle: widget.book.chapters[index].title,
 
-                          /*bookAuthor: widget.book.author,
+                        /*bookAuthor: widget.book.author,
                           bookContent: widget.book.chapters[index].content,
                           chapterLength: widget.book.chapters.length,
                           chapterTitle: widget.book.chapters[index].title,*/
-                        );
-                      },
-                    ))
-              ],
-            ),
+                      );
+                    },
+                  )),
+            ],
           ),
         ),
-        bottomNavigationBar: Padding(
-            padding: const EdgeInsets.only(bottom: 40.0, left: 20, right: 20),
-            child: LinearProgressIndicator(
-              value: scrollProgess,
-              minHeight: 5,
-              color: textColor.withAlpha(100),
-              backgroundColor: bgColor.withAlpha(255),
-            )));
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(left: 20, right: 20, bottom: 40),
+        child: LinearProgressIndicator(
+          value: scrollProgess,
+          minHeight: 10,
+          borderRadius: BorderRadius.circular(20),
+        ),
+      ),
+    );
   }
 }
