@@ -57,48 +57,8 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(30.0),
                 child: NewHomeNavigationBar(),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Searchbox(),
-              ),
               SizedBox(
                 height: 30,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Text(
-                  'Recommended for you',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              SizedBox(
-                  height: AppMeasure.height / 3,
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: _books.length,
-                      itemBuilder: (context, index) {
-                        final book = _books[index];
-                        return GestureDetector(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      ChapterPage(book: book))),
-                          child: BookTile(
-                              imageUrl: book.coverPath,
-                              bookName: book.title,
-                              author: book.author,
-                              chapters: book.chapters.toString()),
-                        );
-                      })),
-              SizedBox(
-                height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -139,7 +99,43 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-              )
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Text(
+                  'Recommended for you',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                  height: AppMeasure.height / 3,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: _books.length,
+                      itemBuilder: (context, index) {
+                        final book = _books[index];
+                        return GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ChapterPage(book: book))),
+                          child: BookTile(
+                              imageUrl: book.coverPath,
+                              bookName: book.title,
+                              author: book.author,
+                              chapters: book.chapters.toString()),
+                        );
+                      })),
+              SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ));
