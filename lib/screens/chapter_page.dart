@@ -35,6 +35,11 @@ class _ChapterPageState extends State<ChapterPage> {
     });
   }
 
+  double toPercent() {
+    scrollProgess *= 100;
+    return scrollProgess;
+  }
+
   void changeBgToBlack() {
     setState(() {
       bgColor = Colors.black;
