@@ -44,7 +44,7 @@ class _ChapterPageState extends State<ChapterPage> {
   void changeBgToBlack() {
     setState(() {
       bgColor = Colors.black;
-      textColor = Colors.white;
+      textColor = Colors.white30;
     });
   }
 
@@ -399,6 +399,8 @@ class _ChapterPageState extends State<ChapterPage> {
           value: scrollProgess,
           minHeight: 10,
           borderRadius: BorderRadius.circular(20),
+          backgroundColor: textColor.withAlpha(20),
+          color: textColor.withAlpha(50),
         ),
       ),
     );
