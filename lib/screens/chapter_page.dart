@@ -24,7 +24,7 @@ class _ChapterPageState extends State<ChapterPage> {
   String fontFamily = 'Garamond';
 
   late ScrollController _scrollController;
-  double _savedScrollPosition = 0.0;
+  double _savedScrollPosition = 0.5;
 
   @override
   void initState() {
@@ -35,13 +35,14 @@ class _ChapterPageState extends State<ChapterPage> {
     _scrollController.addListener(() {
       _saveScrollPosition();
     });
+    print(_savedScrollPosition);
   }
 
   Future<void> _loadScrollPosition() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     setState(() {
-      _savedScrollPosition = prefs.getDouble('scrollPosition') ?? 0.0;
+      _savedScrollPosition = prefs.getDouble('scrollPosition') ?? 0.5;
     });
 
     _scrollController.jumpTo(_savedScrollPosition);
