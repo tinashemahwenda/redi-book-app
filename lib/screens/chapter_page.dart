@@ -35,11 +35,9 @@ class _ChapterPageState extends State<ChapterPage> {
     super.initState();
     _loadScrollPosition();
     scrollController.addListener(() {
+      _saveScrollPosition();
       progressValue =
           scrollController.offset / scrollController.position.maxScrollExtent;
-
-      _saveScrollPosition();
-      print(_savedScrollPosition);
 
       setState(() {});
     });
@@ -58,6 +56,12 @@ class _ChapterPageState extends State<ChapterPage> {
   Future<void> _saveScrollPosition() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setDouble('scrollPositon', scrollController.offset);
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
   }
 
   void changeBgToBlack() {
