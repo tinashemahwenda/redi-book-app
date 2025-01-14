@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:redi/constants/constants.dart';
+import 'package:redi/screens/homescreen.dart';
 
 class HomeSplashScreen extends StatelessWidget {
   const HomeSplashScreen({super.key});
@@ -41,19 +42,23 @@ class HomeSplashScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(50),
-              child: Container(
-                color: Colors.grey[300],
-                padding: EdgeInsets.all(10),
-                child: CircleAvatar(
-                  child: Icon(
-                    Icons.arrow_forward_ios_outlined,
-                    color: Colors.white,
-                    size: 20,
+            GestureDetector(
+              onTap: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage())),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Container(
+                  color: Colors.grey[300],
+                  padding: EdgeInsets.all(10),
+                  child: CircleAvatar(
+                    child: Icon(
+                      Icons.arrow_forward_ios_outlined,
+                      color: Colors.white,
+                      size: 20,
+                    ),
+                    backgroundColor: Colors.black,
+                    radius: 30,
                   ),
-                  backgroundColor: Colors.black,
-                  radius: 30,
                 ),
               ),
             )
