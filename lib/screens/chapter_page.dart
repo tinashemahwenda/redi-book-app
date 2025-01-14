@@ -3,8 +3,6 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:redi/components/chapter_tile.dart';
 import 'package:redi/components/settingsmodal.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import '../constants/constants.dart';
 import '../models/book.dart';
 
@@ -23,40 +21,16 @@ class _ChapterPageState extends State<ChapterPage> {
   Color textColor = Colors.black;
   String fontFamily = 'Garamond';
 
-  late ScrollController _scrollController;
-  double _savedScrollPosition = 0.5;
+  ScrollController scrollController = ScrollController();
+  double scrollProgess = 0;
 
   @override
   void initState() {
     super.initState();
-    _scrollController = ScrollController();
-    _loadScrollPosition();
-
-    _scrollController.addListener(() {
-      _saveScrollPosition();
+    scrollController.addListener(() {
+      scrollProgess =
+          scrollController.offset / scrollController.position.maxScrollExtent;
     });
-    print(_savedScrollPosition);
-  }
-
-  Future<void> _loadScrollPosition() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-
-    setState(() {
-      _savedScrollPosition = prefs.getDouble('scrollPosition') ?? 0.5;
-    });
-
-    _scrollController.jumpTo(_savedScrollPosition);
-  }
-
-  Future<void> _saveScrollPosition() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble('scrollPositon', _scrollController.offset);
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
   }
 
   void changeBgToBlack() {
@@ -385,7 +359,6 @@ class _ChapterPageState extends State<ChapterPage> {
                     height: AppMeasure.height / 1.3,
                     width: AppMeasure.width,
                     child: ListView.builder(
-                      controller: _scrollController,
                       itemCount: widget.book.chapters.length,
                       itemBuilder: (context, index) {
                         return ChapterTile(
@@ -413,7 +386,7 @@ class _ChapterPageState extends State<ChapterPage> {
         ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.only(bottom: 40.0, left: 20, right: 20),
-          child: Text(''),
+          child: Text(scrollProgess.toString()),
         ));
   }
 }
