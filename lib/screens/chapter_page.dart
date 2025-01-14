@@ -30,6 +30,8 @@ class _ChapterPageState extends State<ChapterPage> {
     scrollController.addListener(() {
       scrollProgess =
           scrollController.offset / scrollController.position.maxScrollExtent;
+
+      setState(() {});
     });
   }
 
@@ -359,6 +361,7 @@ class _ChapterPageState extends State<ChapterPage> {
                     height: AppMeasure.height / 1.3,
                     width: AppMeasure.width,
                     child: ListView.builder(
+                      controller: scrollController,
                       itemCount: widget.book.chapters.length,
                       itemBuilder: (context, index) {
                         return ChapterTile(
