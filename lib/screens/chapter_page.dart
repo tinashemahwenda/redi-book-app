@@ -35,9 +35,10 @@ class _ChapterPageState extends State<ChapterPage> {
     });
   }
 
-  double toPercent() {
+  int toPercent() {
     scrollProgess *= 100;
-    return scrollProgess;
+
+    return scrollProgess.round();
   }
 
   void changeBgToBlack() {
@@ -394,7 +395,7 @@ class _ChapterPageState extends State<ChapterPage> {
         ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.only(bottom: 40.0, left: 20, right: 20),
-          child: Text(scrollProgess.toString()),
+          child: Text('Read progress: ${toPercent()}%'),
         ));
   }
 }
