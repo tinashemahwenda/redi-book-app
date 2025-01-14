@@ -101,6 +101,9 @@ class _HomePageState extends State<HomePage> {
                       bubbleEmoji: '🤩',
                       bubbleTitle: 'Happy',
                     ),
+                    SizedBox(
+                      width: 20,
+                    ),
                   ],
                 ),
               ),
