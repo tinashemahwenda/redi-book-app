@@ -39,6 +39,7 @@ class _ChapterPageState extends State<ChapterPage> {
           scrollController.offset / scrollController.position.maxScrollExtent;
 
       _saveScrollPosition();
+      print(_savedScrollPosition);
 
       setState(() {});
     });
