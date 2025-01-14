@@ -21,10 +21,10 @@ class HomeSplashScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 60,
             ),
             Text(
-              'Where stories \nwait to be told',
+              'Where stories \nwait to be told!',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 40,
@@ -35,8 +35,26 @@ class HomeSplashScreen extends StatelessWidget {
               padding: const EdgeInsets.all(20.0),
               child: Text(
                 'Indulge in the magic of storytelling through\n our Redi Books as our authors weave tales that will captivate, inspire & transform you!',
-                style: TextStyle(),
+                style: TextStyle(
+                  fontSize: 18,
+                ),
                 textAlign: TextAlign.center,
+              ),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Container(
+                color: Colors.grey[300],
+                padding: EdgeInsets.all(10),
+                child: CircleAvatar(
+                  child: Icon(
+                    Icons.arrow_forward_ios_outlined,
+                    color: Colors.white,
+                    size: 20,
+                  ),
+                  backgroundColor: Colors.black,
+                  radius: 30,
+                ),
               ),
             )
           ],
