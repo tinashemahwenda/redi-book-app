@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:redi/constants/constants.dart';
-import 'package:redi/screens/homescreen.dart';
+import 'screens/home_splash_screen.dart';
 
 void main() {
   runApp(const RediApp());
@@ -21,7 +21,7 @@ class RediApp extends StatelessWidget {
       AppMeasure.height = MediaQuery.of(context).size.height;
 
       return MaterialApp(
-        home: HomePage(),
+        home: HomeSplashScreen(),
         theme: ThemeData(fontFamily: 'Garamond'),
         debugShowCheckedModeBanner: false,
       );
