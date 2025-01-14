@@ -23,23 +23,17 @@ class _ChapterPageState extends State<ChapterPage> {
   Color textColor = Colors.black;
   String fontFamily = 'Garamond';
 
-  double progressValue = 0.0;
-
-  late double _progressPercentage;
-
-  ScrollController scrollController = ScrollController();
-  late double _savedScrollPosition;
+  late ScrollController _scrollController;
+  double _savedScrollPosition = 0.0;
 
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     _loadScrollPosition();
-    scrollController.addListener(() {
-      _saveScrollPosition();
-      progressValue =
-          scrollController.offset / scrollController.position.maxScrollExtent;
 
-      setState(() {});
+    _scrollController.addListener(() {
+      _saveScrollPosition();
     });
   }
 
@@ -50,17 +44,17 @@ class _ChapterPageState extends State<ChapterPage> {
       _savedScrollPosition = prefs.getDouble('scrollPosition') ?? 0.0;
     });
 
-    scrollController.jumpTo(_savedScrollPosition);
+    _scrollController.jumpTo(_savedScrollPosition);
   }
 
   Future<void> _saveScrollPosition() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble('scrollPositon', scrollController.offset);
+    await prefs.setDouble('scrollPositon', _scrollController.offset);
   }
 
   @override
   void dispose() {
-    scrollController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -69,11 +63,6 @@ class _ChapterPageState extends State<ChapterPage> {
       bgColor = Colors.black;
       textColor = Colors.white;
     });
-  }
-
-  void progressPercentage() {
-    _progressPercentage = progressValue * 100;
-    _progressPercentage.round();
   }
 
   void changeBgToBrown() {
@@ -395,7 +384,7 @@ class _ChapterPageState extends State<ChapterPage> {
                     height: AppMeasure.height / 1.3,
                     width: AppMeasure.width,
                     child: ListView.builder(
-                      controller: scrollController,
+                      controller: _scrollController,
                       itemCount: widget.book.chapters.length,
                       itemBuilder: (context, index) {
                         return ChapterTile(
