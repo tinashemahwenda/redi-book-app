@@ -57,6 +57,10 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(30.0),
                 child: NewHomeNavigationBar(),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Searchbox(),
+              ),
               SizedBox(
                 height: 30,
               ),
@@ -99,6 +103,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
