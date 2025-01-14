@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeSplashScreen extends StatelessWidget {
   const HomeSplashScreen({super.key});
@@ -7,7 +8,11 @@ class HomeSplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
-      children: [Image.asset('assets/images/splash.svg')],
+      children: [
+        SvgPicture.asset(
+          'assets/images/splash.svg',
+        )
+      ],
     ));
   }
 }
