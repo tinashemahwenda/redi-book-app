@@ -28,7 +28,7 @@ class _ChapterPageState extends State<ChapterPage> {
   late double _progressPercentage;
 
   ScrollController scrollController = ScrollController();
-  double _savedScrollPosition = 0.0;
+  late double _savedScrollPosition;
 
   @override
   void initState() {
