@@ -26,7 +26,6 @@ class BubbleTile extends StatelessWidget {
                   bubbleEmoji,
                   style: TextStyle(
                     fontSize: 20,
-                    color: Colors.red,
                   ),
                 )),
           ),
