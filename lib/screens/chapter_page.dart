@@ -394,8 +394,12 @@ class _ChapterPageState extends State<ChapterPage> {
           ),
         ),
         bottomNavigationBar: Padding(
-          padding: const EdgeInsets.only(bottom: 40.0, left: 20, right: 20),
-          child: Text('Read progress: ${toPercent()}%'),
-        ));
+            padding: const EdgeInsets.only(bottom: 40.0, left: 20, right: 20),
+            child: LinearProgressIndicator(
+              value: scrollProgess,
+              minHeight: 5,
+              color: textColor.withAlpha(100),
+              backgroundColor: bgColor.withAlpha(255),
+            )));
   }
 }
