@@ -17,7 +17,7 @@ class HomeSplashScreen extends StatelessWidget {
             ),
             Center(
               child: SvgPicture.asset(
-                'assets/images/splash_2.svg',
+                'assets/images/splash.svg',
                 width: AppMeasure.width,
               ),
             ),
