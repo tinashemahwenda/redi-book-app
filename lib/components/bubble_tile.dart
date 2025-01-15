@@ -19,10 +19,19 @@ class BubbleTile extends StatelessWidget {
           GestureDetector(
             onTap: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => BookListing())),
-            child: CircleAvatar(
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(
+                    width: 1,
+                    color: Colors.grey,
+                  )),
+              child: CircleAvatar(
                 backgroundColor: Colors.grey[200],
                 radius: AppMeasure.width / 10,
-                child: Image.asset(bubbleImagePath)),
+                backgroundImage: AssetImage(bubbleImagePath),
+              ),
+            ),
           ),
           Text(
             bubbleTitle,
