@@ -8,7 +8,7 @@ class Searchbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(50),
       child: Container(
         width: AppMeasure.width,
         padding: EdgeInsets.only(left: 20, top: 10, bottom: 10),

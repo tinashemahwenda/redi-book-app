@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:redi/components/searchbox.dart';
 import 'package:redi/constants/constants.dart';
 
 class BookListing extends StatelessWidget {
@@ -10,23 +11,48 @@ class BookListing extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.grey[200],
-                    child: Icon(
-                      Icons.arrow_back_ios_new,
-                      size: 20,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.grey[200],
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        size: 20,
+                      ),
                     ),
-                  )
-                ],
-              )
-            ],
+                    SizedBox(
+                      width: 10,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: Container(
+                        padding: EdgeInsets.only(
+                          top: 10,
+                          left: 40,
+                          right: 40,
+                          bottom: 10,
+                        ),
+                        color: Colors.grey[200],
+                        width: AppMeasure.width / 1.3,
+                        height: 45,
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Search for more books.'),
+                        ),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ));
   }
