@@ -58,11 +58,26 @@ class BookListing extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      ListingBubble(listingName: 'Fiction'),
-                      ListingBubble(listingName: 'Romance'),
-                      ListingBubble(listingName: 'Happy'),
-                      ListingBubble(listingName: 'Relationships'),
-                      ListingBubble(listingName: 'Classic'),
+                      ListingBubble(
+                        listingName: 'Fiction',
+                        boxColor: Colors.deepPurple,
+                      ),
+                      ListingBubble(
+                        listingName: 'Romance',
+                        boxColor: Colors.black,
+                      ),
+                      ListingBubble(
+                        listingName: 'Happy',
+                        boxColor: Colors.black,
+                      ),
+                      ListingBubble(
+                        listingName: 'Relationships',
+                        boxColor: Colors.black,
+                      ),
+                      ListingBubble(
+                        listingName: 'Classic',
+                        boxColor: Colors.black,
+                      ),
                     ],
                   ),
                 ),
