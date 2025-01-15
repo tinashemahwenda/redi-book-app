@@ -15,7 +15,17 @@ class BookListing extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Row()
+              Row(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.grey[200],
+                    child: Icon(
+                      Icons.arrow_back_ios_new,
+                      size: 20,
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ));
