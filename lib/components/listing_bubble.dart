@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ListingBubble extends StatelessWidget {
-  String listingName;
+  final String listingName;
   ListingBubble({super.key, required this.listingName});
 
   @override
