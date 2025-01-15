@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 class ListingBubble extends StatelessWidget {
   final String listingName;
   final Color boxColor;
-  ListingBubble({super.key, required this.listingName, required this.boxColor});
+  final bool isActive;
+  ListingBubble(
+      {super.key,
+      required this.listingName,
+      required this.boxColor,
+      required this.isActive});
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +23,13 @@ class ListingBubble extends StatelessWidget {
             listingName,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              color: boxColor,
+              color: isActive ? Colors.white : boxColor.withAlpha(150),
             ),
           ),
-          color: boxColor.withAlpha(100),
+          color: isActive ? boxColor : boxColor.withAlpha(15),
           padding: EdgeInsets.symmetric(
             horizontal: 20,
-            vertical: 5,
+            vertical: 10,
           ),
         ),
       ),
