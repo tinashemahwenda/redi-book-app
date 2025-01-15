@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import 'package:redi/components/searchbox.dart';
 import 'package:redi/constants/constants.dart';
 
 class BookListing extends StatelessWidget {
@@ -14,6 +12,7 @@ class BookListing extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: 20,
@@ -34,7 +33,7 @@ class BookListing extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                       child: Container(
                         padding: EdgeInsets.only(
-                          top: 10,
+                          top: 15,
                           left: 40,
                           right: 40,
                           bottom: 10,
@@ -50,6 +49,26 @@ class BookListing extends StatelessWidget {
                       ),
                     )
                   ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    child: Text(
+                      'Fiction',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.deepPurple,
+                      ),
+                    ),
+                    color: Colors.deepPurple[200],
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 5,
+                    ),
+                  ),
                 )
               ],
             ),
