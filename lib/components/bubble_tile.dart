@@ -4,10 +4,10 @@ import 'package:redi/screens/book_listing.dart';
 import '../constants/constants.dart';
 
 class BubbleTile extends StatelessWidget {
-  final String bubbleEmoji;
+  final String bubbleImagePath;
   final String bubbleTitle;
   const BubbleTile(
-      {super.key, required this.bubbleEmoji, required this.bubbleTitle});
+      {super.key, required this.bubbleImagePath, required this.bubbleTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,7 @@ class BubbleTile extends StatelessWidget {
             child: CircleAvatar(
                 backgroundColor: Colors.grey[200],
                 radius: AppMeasure.width / 10,
-                child: Text(
-                  bubbleEmoji,
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                )),
+                child: Image.asset(bubbleImagePath)),
           ),
           Text(
             bubbleTitle,
