@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:redi/components/listing_bubble.dart';
 import 'package:redi/constants/constants.dart';
 
 class BookListing extends StatelessWidget {
@@ -53,20 +54,33 @@ class BookListing extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Container(
-                    child: Text(
-                      'Fiction',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      ListingBubble(listingName: 'Fiction'),
+                      ListingBubble(listingName: 'Romance'),
+                      ListingBubble(listingName: 'Happy'),
+                      ListingBubble(listingName: 'Relationships'),
+                      ListingBubble(listingName: 'Classic'),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  height: AppMeasure.height,
+                  width: AppMeasure.width,
+                  child: ListView.builder(
+                    itemCount: 20,
+                    itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: Container(
+                        width: 100,
+                        height: 200,
+                        color: Colors.grey,
                       ),
-                    ),
-                    color: Colors.deepPurple[200],
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 5,
                     ),
                   ),
                 )
