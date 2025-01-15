@@ -3,8 +3,23 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:redi/constants/constants.dart';
 import 'package:redi/screens/homescreen.dart';
 
-class HomeSplashScreen extends StatelessWidget {
+class HomeSplashScreen extends StatefulWidget {
   const HomeSplashScreen({super.key});
+
+  @override
+  State<HomeSplashScreen> createState() => _HomeSplashScreenState();
+}
+
+class _HomeSplashScreenState extends State<HomeSplashScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
