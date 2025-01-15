@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:redi/constants/constants.dart';
 import 'package:redi/screens/homescreen.dart';
 
@@ -16,14 +15,10 @@ class _HomeSplashScreenState extends State<HomeSplashScreen> {
   @override
   void initState() {
     super.initState();
+    HomePage();
     Future.delayed(Duration(seconds: 8), () {
       Navigator.pushReplacement(
-          context,
-          PageTransition(
-            type: PageTransitionType.fade,
-            child: HomePage(),
-            duration: Duration(milliseconds: 500),
-          ));
+          context, MaterialPageRoute(builder: (context) => HomePage()));
     });
   }
 
@@ -63,8 +58,7 @@ class _HomeSplashScreenState extends State<HomeSplashScreen> {
                 textAlign: TextAlign.center,
               ),
             ),
-            //Lottie.asset('assets/animations/smart.json', width: 150),
-            LinearProgressIndicator()
+            Lottie.asset('assets/animations/smart.json', width: 150),
           ],
         ));
   }
