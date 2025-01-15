@@ -20,11 +20,14 @@ class BookListing extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.grey[200],
-                      child: Icon(
-                        Icons.arrow_back_ios_new,
-                        size: 20,
+                    GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[200],
+                        child: Icon(
+                          Icons.arrow_back_ios_new,
+                          size: 20,
+                        ),
                       ),
                     ),
                     SizedBox(
