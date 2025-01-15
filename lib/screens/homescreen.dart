@@ -82,23 +82,23 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   children: [
                     BubbleTile(
-                      bubbleEmoji: '😇',
+                      bubbleImagePath: 'assets/images/fiction.png',
                       bubbleTitle: 'Fiction',
                     ),
                     BubbleTile(
-                      bubbleEmoji: '🥰',
+                      bubbleImagePath: 'assets/images/romance.png',
                       bubbleTitle: 'Romance',
                     ),
                     BubbleTile(
-                      bubbleEmoji: '🤣',
+                      bubbleImagePath: 'assets/images/humor.png',
                       bubbleTitle: 'Humor',
                     ),
                     BubbleTile(
-                      bubbleEmoji: '😎',
+                      bubbleImagePath: 'assets/images/classic.png',
                       bubbleTitle: 'Classic',
                     ),
                     BubbleTile(
-                      bubbleEmoji: '🤩',
+                      bubbleImagePath: 'assets/images/happy.png',
                       bubbleTitle: 'Happy',
                     ),
                     SizedBox(
