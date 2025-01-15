@@ -39,6 +39,7 @@ dependencies:
   screen_brightness: ^2.0.1
   shared_preferences: ^2.3.5
   flutter_svg: ^2.0.17
+  page_transition: ^2.2.1
   
   
 
