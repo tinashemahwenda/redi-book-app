@@ -13,7 +13,6 @@ class HomeSplashScreen extends StatefulWidget {
 class _HomeSplashScreenState extends State<HomeSplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
