@@ -61,22 +61,27 @@ class BookListing extends StatelessWidget {
                       ListingBubble(
                         listingName: 'Fiction',
                         boxColor: Colors.deepPurple,
+                        isActive: true,
                       ),
                       ListingBubble(
                         listingName: 'Romance',
                         boxColor: Colors.black,
+                        isActive: false,
                       ),
                       ListingBubble(
                         listingName: 'Happy',
                         boxColor: Colors.black,
+                        isActive: false,
                       ),
                       ListingBubble(
                         listingName: 'Relationships',
                         boxColor: Colors.black,
+                        isActive: false,
                       ),
                       ListingBubble(
                         listingName: 'Classic',
                         boxColor: Colors.black,
+                        isActive: false,
                       ),
                     ],
                   ),
