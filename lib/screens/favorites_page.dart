@@ -49,6 +49,7 @@ class FavoritesPage extends StatelessWidget {
                     'Your favorite books will be here!',
                     style: TextStyle(
                       fontSize: 18,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
