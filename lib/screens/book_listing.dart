@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:redi/components/listing_bubble.dart';
 import 'package:redi/constants/constants.dart';
 
@@ -91,8 +92,18 @@ class BookListing extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 100,
                 ),
+                Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Lottie.asset('assets/animations/smart.json', width: 100),
+                      Text('We are still gathering books, please try later')
+                    ],
+                  ),
+                )
               ],
             ),
           ),
