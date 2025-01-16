@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lottie/lottie.dart';
 import 'package:redi/components/back_button.dart';
 
 class FavoritesPage extends StatelessWidget {
@@ -41,10 +40,13 @@ class FavoritesPage extends StatelessWidget {
                 children: [
                   SvgPicture.asset(
                     'assets/images/favorite.svg',
-                    width: 200,
+                    width: 150,
+                  ),
+                  SizedBox(
+                    height: 25,
                   ),
                   Text(
-                    'Gathering your favorite books',
+                    'Your favorite books will be here!',
                     style: TextStyle(
                       fontSize: 18,
                     ),
