@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:redi/components/back_button.dart';
 
@@ -38,7 +39,7 @@ class FavoritesPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Lottie.asset('assets/animations/smart.json', width: 100),
+                  SvgPicture.asset('assets/images/favorite.svg'),
                   Text(
                     'Gathering your favorite books',
                     style: TextStyle(
