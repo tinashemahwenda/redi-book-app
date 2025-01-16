@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:redi/screens/favorites_page.dart';
+
+import '../screens/features.dart';
 //import 'package:redi/screens/features.dart';
 
 class NewHomeNavigationBar extends StatelessWidget {
@@ -27,14 +29,14 @@ class NewHomeNavigationBar extends StatelessWidget {
                 Icons.favorite,
               ),
             ),
-            /* GestureDetector(
+            GestureDetector(
               onTap: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => FeaturesPage())),
               child: Icon(
                 Icons.list,
                 size: 30,
               ),
-            )*/
+            )
           ],
         )
       ],
