@@ -58,9 +58,9 @@ class FeaturesPage extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              UpcomingTasks(taskName: 'Search Bar'),
-              UpcomingTasks(taskName: 'Add a book listing page'),
-              UpcomingTasks(taskName: 'Redesign on the chapter page'),
+              FinishedTask(taskName: 'Search Bar'),
+              FinishedTask(taskName: 'Add a book listing page'),
+              FinishedTask(taskName: 'Redesign on the chapter page'),
               Text(
                 'v0.0.5',
                 style: TextStyle(
