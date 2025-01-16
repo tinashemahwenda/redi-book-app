@@ -39,7 +39,10 @@ class FavoritesPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SvgPicture.asset('assets/images/favorite.svg'),
+                  SvgPicture.asset(
+                    'assets/images/favorite.svg',
+                    width: 200,
+                  ),
                   Text(
                     'Gathering your favorite books',
                     style: TextStyle(
