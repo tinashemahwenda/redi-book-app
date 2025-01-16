@@ -16,13 +16,21 @@ class NewHomeNavigationBar extends StatelessWidget {
             fontSize: 50,
           ),
         ),
-        GestureDetector(
-          onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => FeaturesPage())),
-          child: Icon(
-            Icons.list,
-            size: 30,
-          ),
+        Row(
+          spacing: 10,
+          children: [
+            Icon(
+              Icons.favorite,
+            ),
+            /* GestureDetector(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => FeaturesPage())),
+              child: Icon(
+                Icons.list,
+                size: 30,
+              ),
+            )*/
+          ],
         )
       ],
     );
