@@ -2,13 +2,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:redi/components/bubble_tile.dart';
+import 'package:redi/components/cool_navigationbar.dart';
 //import 'package:redi/components/cool_navigationbar.dart';
 
 //import 'package:redi/components/searchbox.dart';
 import 'package:redi/constants/constants.dart';
 import 'package:redi/models/book.dart';
 import 'package:redi/screens/chapter_page.dart';
-import 'package:redi/screens/favorites_page.dart';
+//import 'package:redi/screens/favorites_page.dart';
 
 import '../components/bookTile.dart';
 //import '../components/new_homenavbar.dart';
@@ -58,43 +59,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Padding(
                     padding: const EdgeInsets.all(20.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        GestureDetector(
-                            //onTap: () => Scaffold.of(context).openDrawer(),
-                            child: Icon(Icons.menu)),
-                        Row(
-                          spacing: 10,
-                          children: [
-                            GestureDetector(
-                              onTap: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => FavoritesPage())),
-                              child: Icon(
-                                Icons.favorite,
-                                color: Colors.deepPurpleAccent,
-                              ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(5),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.white,
-                                  border: Border.all(
-                                      width: 1, color: Colors.black)),
-                              child: Text(
-                                'Leaderboard',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    )),
+                    child: CoolNavigationbar()),
                 SizedBox(
                   height: 10,
                 ),
