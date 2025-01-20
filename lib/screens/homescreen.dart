@@ -10,7 +10,6 @@ import 'package:redi/constants/constants.dart';
 import 'package:redi/models/book.dart';
 import 'package:redi/screens/chapter_page.dart';
 //import 'package:redi/screens/favorites_page.dart';
-
 import '../components/bookTile.dart';
 //import '../components/new_homenavbar.dart';
 
