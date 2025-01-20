@@ -64,9 +64,9 @@ class _HomePageState extends State<HomePage> {
                     width: AppMeasure.width,
                     height: AppMeasure.height / 5,
                     decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(width: 1, color: Colors.black)),
+                      color: Colors.deepPurpleAccent,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
@@ -85,18 +85,30 @@ class _HomePageState extends State<HomePage> {
                             width: AppMeasure.width,
                             height: AppMeasure.height / 10,
                             decoration: BoxDecoration(
-                                color: Colors.deepPurpleAccent,
+                                color: Colors.black54,
                                 borderRadius: BorderRadius.circular(30)),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 20.0, vertical: 5),
                               child: Row(
+                                spacing: 10,
                                 children: [
-                                  Image.asset(
-                                    'assets/images/book-cover-2.png',
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(50),
+                                    child: Container(
+                                      width: 50,
+                                      height: 50,
+                                      child: Image.asset(
+                                        'assets/images/book-cover-2.png',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
                                   ),
                                   Column(
                                     children: [
+                                      SizedBox(
+                                        height: 20,
+                                      ),
                                       Text(
                                         'Mapenzi EkuHarare',
                                         style: TextStyle(
