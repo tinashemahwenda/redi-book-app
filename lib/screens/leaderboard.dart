@@ -7,10 +7,18 @@ class LeadboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          GoBackButton(),
-        ],
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 30,
+          vertical: 40,
+        ),
+        child: Column(
+          children: [
+            SizedBox(height: 40),
+            GoBackButton(),
+          ],
+        ),
       ),
     );
   }
