@@ -7,6 +7,7 @@ import 'package:redi/components/bubble_tile.dart';
 import 'package:redi/constants/constants.dart';
 import 'package:redi/models/book.dart';
 import 'package:redi/screens/chapter_page.dart';
+import 'package:redi/screens/favorites_page.dart';
 
 import '../components/bookTile.dart';
 //import '../components/new_homenavbar.dart';
@@ -63,9 +64,15 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         spacing: 10,
                         children: [
-                          Icon(
-                            Icons.favorite,
-                            color: Colors.deepPurpleAccent,
+                          GestureDetector(
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => FavoritesPage())),
+                            child: Icon(
+                              Icons.favorite,
+                              color: Colors.deepPurpleAccent,
+                            ),
                           ),
                           Container(
                             padding: EdgeInsets.all(5),
