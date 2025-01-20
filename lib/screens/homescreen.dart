@@ -46,114 +46,130 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 40,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: NewHomeNavigationBar(),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 40,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: NewHomeNavigationBar(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Container(
                     width: AppMeasure.width,
-                    height: AppMeasure.height / 4,
-                    color: Colors.deepPurpleAccent,
+                    height: AppMeasure.height / 4.5,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(width: 1, color: Colors.black)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Continue Reading',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Text(
-                  'Hottest Reading Lists',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                SizedBox(
+                  height: 30,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
+                    'Hottest Reading Lists',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    BubbleTile(
-                      bubbleImagePath: 'assets/images/fiction.png',
-                      bubbleTitle: 'Fiction',
-                    ),
-                    BubbleTile(
-                      bubbleImagePath: 'assets/images/romance.png',
-                      bubbleTitle: 'Romance',
-                    ),
-                    BubbleTile(
-                      bubbleImagePath: 'assets/images/humor.png',
-                      bubbleTitle: 'Humor',
-                    ),
-                    BubbleTile(
-                      bubbleImagePath: 'assets/images/classic.png',
-                      bubbleTitle: 'Classic',
-                    ),
-                    BubbleTile(
-                      bubbleImagePath: 'assets/images/happy.png',
-                      bubbleTitle: 'Happy',
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                  ],
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Text(
-                  'Recommended for you',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      BubbleTile(
+                        bubbleImagePath: 'assets/images/fiction.png',
+                        bubbleTitle: 'Fiction',
+                      ),
+                      BubbleTile(
+                        bubbleImagePath: 'assets/images/romance.png',
+                        bubbleTitle: 'Romance',
+                      ),
+                      BubbleTile(
+                        bubbleImagePath: 'assets/images/humor.png',
+                        bubbleTitle: 'Humor',
+                      ),
+                      BubbleTile(
+                        bubbleImagePath: 'assets/images/classic.png',
+                        bubbleTitle: 'Classic',
+                      ),
+                      BubbleTile(
+                        bubbleImagePath: 'assets/images/happy.png',
+                        bubbleTitle: 'Happy',
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              SizedBox(
-                  height: AppMeasure.height / 3,
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: _books.length,
-                      itemBuilder: (context, index) {
-                        final book = _books[index];
-                        return GestureDetector(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      ChapterPage(book: book))),
-                          child: BookTile(
-                              imageUrl: book.coverPath,
-                              bookName: book.title,
-                              author: book.author,
-                              chapters: book.chapters.toString()),
-                        );
-                      })),
-              SizedBox(
-                height: 20,
-              ),
-            ],
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
+                    'Recommended for you',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                SizedBox(
+                    height: AppMeasure.height / 3,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: _books.length,
+                        itemBuilder: (context, index) {
+                          final book = _books[index];
+                          return GestureDetector(
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ChapterPage(book: book))),
+                            child: BookTile(
+                                imageUrl: book.coverPath,
+                                bookName: book.title,
+                                author: book.author,
+                                chapters: book.chapters.toString()),
+                          );
+                        })),
+                SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
           ),
         ));
   }
