@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Container(
                     width: AppMeasure.width,
-                    height: AppMeasure.height / 4.5,
+                    height: AppMeasure.height / 5,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
@@ -75,7 +75,39 @@ class _HomePageState extends State<HomePage> {
                           Text(
                             'Continue Reading',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Container(
+                            width: AppMeasure.width,
+                            height: AppMeasure.height / 10,
+                            decoration: BoxDecoration(
+                                color: Colors.deepPurpleAccent,
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20.0, vertical: 5),
+                              child: Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/book-cover-2.png',
+                                  ),
+                                  Column(
+                                    children: [
+                                      Text(
+                                        'Mapenzi EkuHarare',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
                           )
                         ],
