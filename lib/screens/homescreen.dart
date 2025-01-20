@@ -52,7 +52,42 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 80,
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(Icons.menu),
+                      Row(
+                        spacing: 10,
+                        children: [
+                          Icon(
+                            Icons.favorite,
+                            color: Colors.deepPurpleAccent,
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(5),
+                            child: Text(
+                              'Leaderboard',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white,
+                                border:
+                                    Border.all(width: 1, color: Colors.black)),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
                 ),
                 /*Padding(
                   padding: const EdgeInsets.all(30.0),
