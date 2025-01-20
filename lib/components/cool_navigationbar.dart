@@ -10,7 +10,7 @@ class CoolNavigationbar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Icon(Icons.menu),
+        GestureDetector(onTap: () {}, child: Icon(Icons.menu)),
         Row(
           spacing: 10,
           children: [
