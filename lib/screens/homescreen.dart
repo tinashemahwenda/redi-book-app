@@ -140,12 +140,6 @@ class _HomePageState extends State<HomePage> {
                                     Icons.arrow_forward_ios_rounded,
                                     color: Colors.white,
                                   )
-                                  /*CircularProgressIndicator(
-                                    value: 0.3,
-                                    color: Colors.white,
-                                    backgroundColor: Colors.white24,
-
-                                  )*/
                                 ],
                               ),
                             ),
