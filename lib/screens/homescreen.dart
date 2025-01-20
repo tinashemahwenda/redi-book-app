@@ -53,10 +53,10 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 40,
               ),
-              /*Padding(
+              Padding(
                 padding: const EdgeInsets.all(30.0),
                 child: NewHomeNavigationBar(),
-              ),*/
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ClipRRect(
