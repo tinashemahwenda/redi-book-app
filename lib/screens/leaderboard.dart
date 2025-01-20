@@ -25,7 +25,7 @@ class Leaderboard extends StatelessWidget {
               height: 20,
             ),
             Text(
-              'Favorites',
+              'Leaderboard',
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
@@ -38,15 +38,15 @@ class Leaderboard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SvgPicture.asset(
-                    'assets/images/favorite.svg',
-                    width: 150,
+                  Image.asset(
+                    'assets/images/fiction.png',
+                    width: 200,
                   ),
                   SizedBox(
                     height: 25,
                   ),
                   Text(
-                    'Your favorite books will be here!',
+                    'Best readers this week will be posted here',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
