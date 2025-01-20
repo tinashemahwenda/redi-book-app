@@ -52,12 +52,12 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 40,
+                  height: 80,
                 ),
-                Padding(
+                /*Padding(
                   padding: const EdgeInsets.all(30.0),
                   child: NewHomeNavigationBar(),
-                ),
+                ),*/
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Container(
