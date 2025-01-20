@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
               Container(
                 width: AppMeasure.width,
                 height: AppMeasure.height / 4,
-                color: Colors.black,
+                color: Colors.deepPurple,
               ),
               SizedBox(
                 height: 30,
