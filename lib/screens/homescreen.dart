@@ -68,24 +68,25 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
+                      padding:
+                          const EdgeInsets.only(left: 20, right: 20, top: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             'Continue Reading',
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 20),
                           Container(
                             width: AppMeasure.width,
                             height: AppMeasure.height / 10,
                             decoration: BoxDecoration(
-                                color: Colors.black54,
+                                color: Colors.black12,
                                 borderRadius: BorderRadius.circular(30)),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(
@@ -105,18 +106,32 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       SizedBox(
                                         height: 20,
                                       ),
                                       Text(
-                                        'Mapenzi EkuHarare',
+                                        'Dzinza RaChiedza',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white,
                                         ),
                                       ),
+                                      Text(
+                                        'Chapters: 10',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      )
                                     ],
+                                  ),
+                                  Expanded(child: SizedBox()),
+                                  CircularProgressIndicator(
+                                    value: 0.3,
+                                    color: Colors.white,
+                                    backgroundColor: Colors.white24,
                                   )
                                 ],
                               ),
