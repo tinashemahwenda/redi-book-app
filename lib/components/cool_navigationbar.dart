@@ -26,7 +26,7 @@ class CoolNavigationbar extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LeadboardScreen())),
+                  MaterialPageRoute(builder: (context) => Leaderboard())),
               child: Container(
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
