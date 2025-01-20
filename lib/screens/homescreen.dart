@@ -69,17 +69,17 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Container(
                             padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white,
+                                border:
+                                    Border.all(width: 1, color: Colors.black)),
                             child: Text(
                               'Leaderboard',
                               style: TextStyle(
                                 color: Colors.black,
                               ),
                             ),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
-                                border:
-                                    Border.all(width: 1, color: Colors.black)),
                           )
                         ],
                       )
