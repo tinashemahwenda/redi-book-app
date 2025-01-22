@@ -32,7 +32,7 @@ class CoolNavigationbar extends StatelessWidget {
                     color: Colors.white,
                     border: Border.all(width: 1, color: Colors.black)),
                 child: Text(
-                  'Leaderboard',
+                  'Account',
                   style: TextStyle(
                     color: Colors.black,
                   ),
