@@ -23,9 +23,9 @@ class SettingsTile extends StatelessWidget {
               Row(
                 spacing: 20,
                 children: [
-                  Icon(Icons.notifications_none),
+                  Icon(iconName),
                   Text(
-                    'Notifications',
+                    settingTileName,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
