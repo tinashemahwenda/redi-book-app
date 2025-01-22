@@ -16,7 +16,7 @@ class _HomeSplashScreenState extends State<HomeSplashScreen> {
   void initState() {
     super.initState();
     HomePage();
-    Future.delayed(Duration(seconds: 8), () {
+    Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => HomePage()));
     });
