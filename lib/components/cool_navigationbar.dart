@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:redi/screens/leaderboard.dart';
 import '../screens/favorites_page.dart';
+import '../screens/profile_page.dart';
 
 class CoolNavigationbar extends StatelessWidget {
   const CoolNavigationbar({super.key});
@@ -22,9 +23,13 @@ class CoolNavigationbar extends StatelessWidget {
                 color: Colors.deepPurpleAccent,
               ),
             ),
-            CircleAvatar(
-              backgroundColor: Colors.deepPurple,
-              child: Image.asset('assets/images/profile/face.png'),
+            GestureDetector(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfilePage())),
+              child: CircleAvatar(
+                backgroundColor: Colors.grey[300],
+                child: Image.asset('assets/images/profile/face.png', width: 20),
+              ),
             )
           ],
         )
