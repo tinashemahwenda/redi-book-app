@@ -24,6 +24,7 @@ class CoolNavigationbar extends StatelessWidget {
             ),
             CircleAvatar(
               backgroundColor: Colors.deepPurple,
+              child: Image.asset('assets/images/profile/face.png'),
             )
           ],
         )
