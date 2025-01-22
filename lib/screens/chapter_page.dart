@@ -20,7 +20,7 @@ class _ChapterPageState extends State<ChapterPage> {
   double _textSize = 20;
   Color bgColor = Colors.white;
   Color textColor = Colors.black;
-  String fontFamily = 'Garamond';
+  String _fontFamily = 'Garamond';
 
   ScrollController scrollController = ScrollController();
   double scrollProgess = 0;
@@ -29,6 +29,7 @@ class _ChapterPageState extends State<ChapterPage> {
   void initState() {
     super.initState();
     _loadFontSize();
+    _loadFontFamily();
     scrollController.addListener(() {
       scrollProgess =
           scrollController.offset / scrollController.position.maxScrollExtent;
@@ -64,15 +65,28 @@ class _ChapterPageState extends State<ChapterPage> {
     });
   }
 
-  void garamondFont() {
+  void _loadFontFamily() async {
+    final prefs = await SharedPreferences.getInstance();
     setState(() {
-      fontFamily = 'Garamond';
+      _fontFamily = (prefs.getString('textFont')) ?? 'Garamond';
     });
   }
 
-  void sansFont() {
+  void _garamondFontFamily() async {
+    final prefs = await SharedPreferences.getInstance();
+
     setState(() {
-      fontFamily = '';
+      _fontFamily = (prefs.getString('textFont') ?? 'Garamond');
+      prefs.setString('textFont', 'Garamond');
+    });
+  }
+
+  void _sansFontFamily() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      _fontFamily = (prefs.getString('textFont') ?? '');
+      prefs.setString('textFont', '');
     });
   }
 
@@ -259,7 +273,7 @@ class _ChapterPageState extends State<ChapterPage> {
                       spacing: 10,
                       children: [
                         GestureDetector(
-                          onTap: garamondFont,
+                          onTap: _garamondFontFamily,
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
@@ -283,7 +297,7 @@ class _ChapterPageState extends State<ChapterPage> {
                           ),
                         ),
                         GestureDetector(
-                          onTap: sansFont,
+                          onTap: _sansFontFamily,
                           child: Container(
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
@@ -363,7 +377,7 @@ class _ChapterPageState extends State<ChapterPage> {
                     itemBuilder: (context, index) {
                       return ChapterTile(
                         textColor: textColor,
-                        textFamily: fontFamily,
+                        textFamily: _fontFamily,
                         chapterSize: _textSize,
                         currentChapter:
                             widget.book.chapters[index].chapter.toString(),
