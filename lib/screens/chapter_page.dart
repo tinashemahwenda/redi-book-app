@@ -3,6 +3,7 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:redi/components/chapter_tile.dart';
 import 'package:redi/components/settingsmodal.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/constants.dart';
 import '../models/book.dart';
 
@@ -16,7 +17,7 @@ class ChapterPage extends StatefulWidget {
 
 class _ChapterPageState extends State<ChapterPage> {
   //Color iconColor = Colors.white;
-  double textSize = 20;
+  double _textSize = 20;
   Color bgColor = Colors.white;
   Color textColor = Colors.black;
   String fontFamily = 'Garamond';
@@ -27,6 +28,7 @@ class _ChapterPageState extends State<ChapterPage> {
   @override
   void initState() {
     super.initState();
+    _loadFontSize();
     scrollController.addListener(() {
       scrollProgess =
           scrollController.offset / scrollController.position.maxScrollExtent;
@@ -74,24 +76,35 @@ class _ChapterPageState extends State<ChapterPage> {
     });
   }
 
-  void increaseFontSize() {
+  void _loadFontSize() async {
+    final prefs = await SharedPreferences.getInstance();
     setState(() {
-      textSize = 28;
-      print('Text Size: $textSize');
+      _textSize = (prefs.getDouble('textSize')) ?? 20;
     });
   }
 
-  void decreaseFontSize() {
+  void _increaseTextSize() async {
+    final prefs = await SharedPreferences.getInstance();
+
     setState(() {
-      textSize = 16;
-      print('Text Size: $textSize');
+      _textSize = (prefs.getDouble('textSize') ?? 20);
+      prefs.setDouble('textSize', 28);
+    });
+  }
+
+  void _decreaseTextSize() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      _textSize = (prefs.getDouble('textSize') ?? 20);
+      prefs.setDouble('textSize', 16);
     });
   }
 
   void defaultFontSize() {
     setState(() {
-      textSize = 20;
-      print('Text Size: $textSize');
+      _textSize = 20;
+      print('Text Size: $_textSize');
     });
   }
 
@@ -144,7 +157,7 @@ class _ChapterPageState extends State<ChapterPage> {
                           spacing: 10,
                           children: [
                             GestureDetector(
-                              onTap: decreaseFontSize,
+                              onTap: _decreaseTextSize,
                               child: Container(
                                 //padding: EdgeInsets.all(10),
                                 width: AppMeasure.width / 10,
@@ -180,7 +193,7 @@ class _ChapterPageState extends State<ChapterPage> {
                               ),
                             ),
                             GestureDetector(
-                              onTap: increaseFontSize,
+                              onTap: _increaseTextSize,
                               child: Container(
                                 width: AppMeasure.width / 10,
                                 height: AppMeasure.height / 20,
@@ -373,7 +386,7 @@ class _ChapterPageState extends State<ChapterPage> {
                       return ChapterTile(
                         textColor: textColor,
                         textFamily: fontFamily,
-                        chapterSize: textSize,
+                        chapterSize: _textSize,
                         currentChapter:
                             widget.book.chapters[index].chapter.toString(),
                         bookAuthor: widget.book.author,
