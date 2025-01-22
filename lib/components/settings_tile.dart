@@ -5,10 +5,12 @@ import '../constants/constants.dart';
 class SettingsTile extends StatelessWidget {
   final String settingTileName;
   final IconData iconName;
+  final bool redColor;
   const SettingsTile({
     super.key,
     required this.iconName,
     required this.settingTileName,
+    required this.redColor,
   });
 
   @override
