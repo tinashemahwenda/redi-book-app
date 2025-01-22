@@ -101,13 +101,6 @@ class _ChapterPageState extends State<ChapterPage> {
     });
   }
 
-  void defaultFontSize() {
-    setState(() {
-      _textSize = 20;
-      print('Text Size: $_textSize');
-    });
-  }
-
   void showSettingsModal() {
     showModalBottomSheet(
         context: context,
@@ -175,21 +168,6 @@ class _ChapterPageState extends State<ChapterPage> {
                                     fontSize: 10,
                                   ),
                                 )),
-                              ),
-                            ),
-                            GestureDetector(
-                              onTap: defaultFontSize,
-                              child: Container(
-                                //padding: EdgeInsets.all(10),
-                                width: AppMeasure.width / 10,
-                                height: AppMeasure.height / 20,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(
-                                      width: 1,
-                                      color: Colors.black,
-                                    )),
-                                child: Center(child: Text('A')),
                               ),
                             ),
                             GestureDetector(
