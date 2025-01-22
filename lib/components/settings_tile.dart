@@ -25,12 +25,16 @@ class SettingsTile extends StatelessWidget {
               Row(
                 spacing: 20,
                 children: [
-                  Icon(iconName),
+                  Icon(
+                    iconName,
+                    color: redColor ? Colors.red : Colors.black,
+                  ),
                   Text(
                     settingTileName,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
+                      color: redColor ? Colors.red : Colors.black,
                     ),
                   )
                 ],
