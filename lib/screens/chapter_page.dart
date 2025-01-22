@@ -23,15 +23,16 @@ class _ChapterPageState extends State<ChapterPage> {
   String _fontFamily = 'Garamond';
 
   ScrollController scrollController = ScrollController();
-  double scrollProgess = 0;
+  double _scrollProgress = 0;
 
   @override
   void initState() {
     super.initState();
     _loadFontSize();
     _loadFontFamily();
+    _loadScrollProgress();
     scrollController.addListener(() {
-      scrollProgess =
+      _scrollProgress =
           scrollController.offset / scrollController.position.maxScrollExtent;
 
       setState(() {});
@@ -39,9 +40,9 @@ class _ChapterPageState extends State<ChapterPage> {
   }
 
   int toPercent() {
-    scrollProgess *= 100;
+    _scrollProgress *= 100;
 
-    return scrollProgess.round();
+    return _scrollProgress.round();
   }
 
   void changeBgToBlack() {
@@ -63,6 +64,25 @@ class _ChapterPageState extends State<ChapterPage> {
       bgColor = Colors.white;
       textColor = Colors.black;
     });
+  }
+
+  void _loadScrollProgress() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      _scrollProgress = (prefs.getDouble('scrollProgress')) ?? 0.0;
+    });
+  }
+
+  Future<double> _setScrollProgress() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      _scrollProgress = (prefs.getDouble('scrollProgress') ?? 0);
+      prefs.setDouble('scrollProgress', _scrollProgress);
+    });
+
+    return _scrollProgress;
   }
 
   void _loadFontFamily() async {
@@ -401,7 +421,7 @@ class _ChapterPageState extends State<ChapterPage> {
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(left: 20, right: 20, bottom: 40),
         child: LinearProgressIndicator(
-          value: scrollProgess,
+          value: _scrollProgress,
           minHeight: 10,
           borderRadius: BorderRadius.circular(20),
           backgroundColor: textColor.withAlpha(20),
