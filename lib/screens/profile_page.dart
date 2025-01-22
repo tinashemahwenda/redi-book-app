@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redi/components/back_button.dart';
+import 'package:redi/components/settings_tile.dart';
 import 'package:redi/components/stats_box.dart';
 import 'package:redi/constants/constants.dart';
 
@@ -60,94 +61,18 @@ class ProfilePage extends StatelessWidget {
                       color: Colors.grey[300],
                     ),
                     SizedBox(height: 20),
-                    Container(
-                      width: AppMeasure.width,
-                      height: AppMeasure.height / 16,
-                      child: Row(
-                        children: [
-                          Row(
-                            spacing: 20,
-                            children: [
-                              Icon(Icons.notifications_none),
-                              Text(
-                                'Notifications',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Divider(),
-                    Container(
-                      width: AppMeasure.width,
-                      height: AppMeasure.height / 16,
-                      child: Row(
-                        children: [
-                          Row(
-                            spacing: 20,
-                            children: [
-                              Icon(Icons.notifications_none),
-                              Text(
-                                'Notifications',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Divider(),
-                    Container(
-                      width: AppMeasure.width,
-                      height: AppMeasure.height / 16,
-                      child: Row(
-                        children: [
-                          Row(
-                            spacing: 20,
-                            children: [
-                              Icon(Icons.notifications_none),
-                              Text(
-                                'Notifications',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Divider(),
-                    Container(
-                      width: AppMeasure.width,
-                      height: AppMeasure.height / 16,
-                      child: Row(
-                        children: [
-                          Row(
-                            spacing: 20,
-                            children: [
-                              Icon(Icons.notifications_none),
-                              Text(
-                                'Notifications',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Divider()
+                    SettingsTile(
+                        iconName: Icons.notifications_none,
+                        settingTileName: 'Notifications'),
+                    SettingsTile(
+                        iconName: Icons.settings_suggest_outlined,
+                        settingTileName: 'Theme Settings'),
+                    SettingsTile(
+                        iconName: Icons.bookmark_border_outlined,
+                        settingTileName: 'Saved Books'),
+                    SettingsTile(
+                        iconName: Icons.delete_outline_rounded,
+                        settingTileName: 'Clear Profile'),
                   ],
                 ),
               )
