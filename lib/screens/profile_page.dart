@@ -5,7 +5,8 @@ import 'package:redi/components/stats_box.dart';
 import 'package:redi/constants/constants.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  final bool redColor;
+  const ProfilePage({super.key, required this.redColor});
 
   @override
   Widget build(BuildContext context) {
