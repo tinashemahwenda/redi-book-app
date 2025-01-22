@@ -74,17 +74,6 @@ class _ChapterPageState extends State<ChapterPage> {
     });
   }
 
-  Future<double> _setScrollProgress() async {
-    final prefs = await SharedPreferences.getInstance();
-
-    setState(() {
-      _scrollProgress = (prefs.getDouble('scrollProgress') ?? 0);
-      prefs.setDouble('scrollProgress', _scrollProgress);
-    });
-
-    return _scrollProgress;
-  }
-
   void _loadFontFamily() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
