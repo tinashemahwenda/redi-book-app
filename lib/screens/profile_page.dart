@@ -5,8 +5,9 @@ import 'package:redi/components/stats_box.dart';
 import 'package:redi/constants/constants.dart';
 
 class ProfilePage extends StatelessWidget {
-  final bool redColor;
-  const ProfilePage({super.key, required this.redColor});
+  const ProfilePage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -66,17 +67,25 @@ class ProfilePage extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     SettingsTile(
-                        iconName: Icons.notifications_none,
-                        settingTileName: 'Notifications'),
+                      iconName: Icons.notifications_none,
+                      settingTileName: 'Notifications',
+                      redColor: false,
+                    ),
                     SettingsTile(
-                        iconName: Icons.settings_suggest_outlined,
-                        settingTileName: 'Theme Settings'),
+                      iconName: Icons.settings_suggest_outlined,
+                      settingTileName: 'Theme Settings',
+                      redColor: false,
+                    ),
                     SettingsTile(
-                        iconName: Icons.bookmark_border_outlined,
-                        settingTileName: 'Saved Books'),
+                      iconName: Icons.bookmark_border_outlined,
+                      settingTileName: 'Saved Books',
+                      redColor: false,
+                    ),
                     SettingsTile(
-                        iconName: Icons.delete_outline_rounded,
-                        settingTileName: 'Clear Profile'),
+                      iconName: Icons.delete_outline_rounded,
+                      settingTileName: 'Clear Profile',
+                      redColor: true,
+                    ),
                   ],
                 ),
               )
