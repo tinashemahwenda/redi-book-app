@@ -3,7 +3,13 @@ import 'package:flutter/material.dart';
 import '../constants/constants.dart';
 
 class SettingsTile extends StatelessWidget {
-  const SettingsTile({super.key});
+  final String settingTileName;
+  final IconData iconName;
+  const SettingsTile({
+    super.key,
+    required this.iconName,
+    required this.settingTileName,
+  });
 
   @override
   Widget build(BuildContext context) {
