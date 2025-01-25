@@ -3,6 +3,7 @@ import 'package:redi/components/back_button.dart';
 import 'package:redi/components/settings_tile.dart';
 import 'package:redi/components/stats_box.dart';
 import 'package:redi/constants/constants.dart';
+import 'package:redi/screens/favorites_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({
@@ -71,10 +72,16 @@ class ProfilePage extends StatelessWidget {
                         settingTileName: 'Theme Settings',
                         redColor: false,
                       ),
-                      SettingsTile(
-                        iconName: Icons.bookmark_border_outlined,
-                        settingTileName: 'Saved Books',
-                        redColor: false,
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => FavoritesPage())),
+                        child: SettingsTile(
+                          iconName: Icons.bookmark_border_outlined,
+                          settingTileName: 'Saved Books',
+                          redColor: false,
+                        ),
                       ),
                       SettingsTile(
                         iconName: Icons.delete_outline_rounded,
