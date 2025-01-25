@@ -78,7 +78,7 @@ class ProfilePage extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (context) => FavoritesPage())),
                         child: SettingsTile(
-                          iconName: Icons.bookmark_border_outlined,
+                          iconName: Icons.favorite_border_outlined,
                           settingTileName: 'Saved Books',
                           redColor: false,
                         ),
