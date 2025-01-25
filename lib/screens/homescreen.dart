@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
 
         print(Colors.deepPurple.value);
         print(Colors.deepPurple.hashCode);
+        print(Colors.white30.value);
       });
     } catch (e) {
       print('Error in loading data $e');

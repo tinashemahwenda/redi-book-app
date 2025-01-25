@@ -24,6 +24,8 @@ class _ChapterPageState extends State<ChapterPage> {
 
   ScrollController scrollController = ScrollController();
   double _scrollProgress = 0;
+  int _savedColor = 4294967295;
+  int _textColor = 4278190080;
 
   @override
   void initState() {
@@ -31,6 +33,7 @@ class _ChapterPageState extends State<ChapterPage> {
     _loadFontSize();
     _loadFontFamily();
     _loadScrollProgress();
+    _loadBgColor();
     scrollController.addListener(() {
       _scrollProgress =
           scrollController.offset / scrollController.position.maxScrollExtent;
@@ -66,6 +69,15 @@ class _ChapterPageState extends State<ChapterPage> {
     });
   }
 
+  void _loadBgColor() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      _savedColor = (prefs.getInt('savedColor')) ?? 4294967295;
+      _textColor = (prefs.getInt('textColor')) ?? 1308622847;
+    });
+  }
+
   void _loadScrollProgress() async {
     final prefs = await SharedPreferences.getInstance();
 
@@ -78,6 +90,18 @@ class _ChapterPageState extends State<ChapterPage> {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _fontFamily = (prefs.getString('textFont')) ?? 'Garamond';
+    });
+  }
+
+  void _darkBackground() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      _savedColor = (prefs.getInt('savedColor')) ?? 4278190080;
+      _textColor = (prefs.getInt('textColor')) ?? 1308622847;
+
+      prefs.setInt('savedColor', 4278190080);
+      prefs.setInt('textColor', 1308622847);
     });
   }
 
@@ -233,7 +257,7 @@ class _ChapterPageState extends State<ChapterPage> {
                               ),
                             ),
                             GestureDetector(
-                              onTap: changeBgToBlack,
+                              onTap: _darkBackground,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(50),
                                 child: Container(
