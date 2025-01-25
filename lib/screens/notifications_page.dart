@@ -6,23 +6,26 @@ class NotificationsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 40),
-        child: Column(
-          children: [
-            GoBackButton(),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'Notifications',
-              style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              GoBackButton(),
+              SizedBox(
+                height: 20,
               ),
-            ),
-          ],
+              Text(
+                'Notifications',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
