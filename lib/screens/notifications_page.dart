@@ -12,6 +12,16 @@ class NotificationsPage extends StatelessWidget {
         child: Column(
           children: [
             GoBackButton(),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'Notifications',
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
       ),
