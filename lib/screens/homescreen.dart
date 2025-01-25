@@ -38,7 +38,10 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         _books = books;
         print(_books);
-        print('Tinashe Mahwenda');
+
+        print(Colors.deepPurple.value);
+        print(Colors.deepPurple.hashCode);
+        print(Colors.deepPurple.toString());
       });
     } catch (e) {
       print('Error in loading data $e');
