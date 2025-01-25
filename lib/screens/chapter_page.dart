@@ -69,10 +69,10 @@ class _ChapterPageState extends State<ChapterPage> {
 
   void _loadBgColor() async {
     final prefs = await SharedPreferences.getInstance();
+    final colorValue = prefs.getInt('savedColor') ?? Colors.white.value;
 
     setState(() {
-      _savedColor = (prefs.getInt('savedColor')) ?? 4294967295;
-      _textColor = (prefs.getInt('textColor')) ?? 1308622847;
+      bgColor = Color(colorValue);
     });
   }
 
@@ -91,16 +91,9 @@ class _ChapterPageState extends State<ChapterPage> {
     });
   }
 
-  void _darkBackground() async {
+  void saveColor(Color color) async {
     final prefs = await SharedPreferences.getInstance();
-
-    setState(() {
-      _savedColor = (prefs.getInt('savedColor')) ?? 4278190080;
-      _textColor = (prefs.getInt('textColor')) ?? 1308622847;
-
-      prefs.setInt('savedColor', 4278190080);
-      prefs.setInt('textColor', 1308622847);
-    });
+    await prefs.setInt('savedColor', color.value);
   }
 
   void _garamondFontFamily() async {
@@ -255,7 +248,7 @@ class _ChapterPageState extends State<ChapterPage> {
                               ),
                             ),
                             GestureDetector(
-                              onTap: _darkBackground,
+                              onTap: () {},
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(50),
                                 child: Container(
