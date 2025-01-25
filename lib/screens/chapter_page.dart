@@ -24,8 +24,6 @@ class _ChapterPageState extends State<ChapterPage> {
 
   ScrollController scrollController = ScrollController();
   double _scrollProgress = 0;
-  int _savedColor = 4294967295;
-  int _textColor = 4278190080;
 
   @override
   void initState() {
