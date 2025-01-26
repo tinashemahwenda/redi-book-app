@@ -10,8 +10,11 @@ class ThemeSettingsPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
+            SizedBox(height: 30),
             GoBackButton(),
             Text('Theme Settings'),
+            SizedBox(height: 20),
+            Image.asset('assets/images/theme.png'),
           ],
         ),
       ),
