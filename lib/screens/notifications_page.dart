@@ -95,12 +95,26 @@ class _NotificationsPageState extends State<NotificationsPage> {
                 ),
               ),
               SizedBox(height: 20),
-              ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: NotificationTile(
-                    notificationName: '10 new books added',
-                    notificationTime: 'Today 8.12am',
-                  ))
+              NotificationTile(
+                notificationName: '10 new books added',
+                notificationTime: 'Today 8.12am',
+              ),
+              NotificationTile(
+                notificationName: '10 new books added',
+                notificationTime: 'Today 8.12am',
+              ),
+              NotificationTile(
+                notificationName: '10 new books added',
+                notificationTime: 'Today 8.12am',
+              ),
+              NotificationTile(
+                notificationName: '10 new books added',
+                notificationTime: 'Today 8.12am',
+              ),
+              NotificationTile(
+                notificationName: '10 new books added',
+                notificationTime: 'Today 8.12am',
+              ),
             ],
           ),
         ),
