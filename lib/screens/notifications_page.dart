@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redi/components/back_button.dart';
+import 'package:redi/constants/constants.dart';
 
 class NotificationsPage extends StatefulWidget {
   const NotificationsPage({super.key});
@@ -44,8 +45,12 @@ class _NotificationsPageState extends State<NotificationsPage> {
                           backgroundColor: Colors.deepPurpleAccent[900],
                           radius: 30,
                           child: Icon(
-                            Icons.announcement,
-                            color: Colors.deepPurple,
+                            _selectedValue
+                                ? Icons.notifications_active
+                                : Icons.notifications_off_outlined,
+                            color: _selectedValue
+                                ? Colors.deepPurple
+                                : Colors.deepPurpleAccent,
                           ),
                         ),
                         Column(
@@ -53,7 +58,10 @@ class _NotificationsPageState extends State<NotificationsPage> {
                           children: [
                             Text(
                               'Alerts',
-                              style: TextStyle(fontSize: 20),
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             Text(_selectedValue
                                 ? 'Turn off some notifications'
@@ -78,9 +86,53 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   ],
                 ),
               ),
-              Expanded(child: SizedBox()),
-              Image.asset('assets/images/fiction.png'),
-              Expanded(child: SizedBox())
+              SizedBox(height: 30),
+              Text(
+                'Alerts & Updates',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              SizedBox(height: 20),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  width: AppMeasure.width,
+                  height: AppMeasure.height / 10,
+                  child: Row(
+                    spacing: 20,
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        child: Icon(
+                          Icons.menu_book_outlined,
+                          color: Colors.deepPurpleAccent,
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: AppMeasure.width / 1.6,
+                            child: Text(
+                              'New chapter added',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'Today, 8.04am',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
