@@ -21,6 +21,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<ScaffoldState> _scaffold = GlobalKey<ScaffoldState>();
   List<Book> _books = [];
   @override
   void initState() {
