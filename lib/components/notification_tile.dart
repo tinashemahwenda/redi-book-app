@@ -18,11 +18,13 @@ class NotificationTile extends StatelessWidget {
       child: Row(
         spacing: 20,
         children: [
-          CircleAvatar(
-            radius: 30,
-            child: Icon(
-              Icons.menu_book_outlined,
-              color: Colors.deepPurpleAccent,
+          Container(
+            decoration: BoxDecoration(
+                border: Border.all(width: 1, color: Colors.black),
+                borderRadius: BorderRadius.circular(50)),
+            child: CircleAvatar(
+              backgroundImage: AssetImage('assets/images/reading.png'),
+              radius: 30,
             ),
           ),
           Column(
@@ -30,7 +32,7 @@ class NotificationTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: AppMeasure.width / 1.6,
+                width: AppMeasure.width / 2,
                 child: Text(
                   'New chapter added',
                   style: TextStyle(
@@ -43,6 +45,10 @@ class NotificationTile extends StatelessWidget {
                 style: TextStyle(color: Colors.grey),
               ),
             ],
+          ),
+          Icon(
+            Icons.delete_outline,
+            color: Colors.deepPurpleAccent,
           )
         ],
       ),
