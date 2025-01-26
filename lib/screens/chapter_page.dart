@@ -73,6 +73,7 @@ class _ChapterPageState extends State<ChapterPage> {
 
     setState(() {
       bgColor = Color(colorValue);
+      textColor = Colors.white30;
     });
   }
 
