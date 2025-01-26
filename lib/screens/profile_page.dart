@@ -5,6 +5,7 @@ import 'package:redi/components/stats_box.dart';
 import 'package:redi/constants/constants.dart';
 import 'package:redi/screens/favorites_page.dart';
 import 'package:redi/screens/notifications_page.dart';
+import 'package:redi/screens/theme_settings_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({
@@ -74,10 +75,16 @@ class ProfilePage extends StatelessWidget {
                           redColor: false,
                         ),
                       ),
-                      SettingsTile(
-                        iconName: Icons.settings_suggest_outlined,
-                        settingTileName: 'Theme Settings',
-                        redColor: false,
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ThemeSettingsPage())),
+                        child: SettingsTile(
+                          iconName: Icons.settings_suggest_outlined,
+                          settingTileName: 'Theme Settings',
+                          redColor: false,
+                        ),
                       ),
                       GestureDetector(
                         onTap: () => Navigator.push(
