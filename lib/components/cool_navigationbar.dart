@@ -6,6 +6,7 @@ import '../screens/profile_page.dart';
 class CoolNavigationbar extends StatelessWidget {
   const CoolNavigationbar({super.key});
 
+  final int streak = 12;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +24,7 @@ class CoolNavigationbar extends StatelessWidget {
                   color: Colors.deepPurpleAccent,
                 ),
                 Text(
-                  '6',
+                  streak.toString(),
                   style: TextStyle(
                     color: Colors.deepPurpleAccent,
                   ),
