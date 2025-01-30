@@ -15,6 +15,22 @@ class CoolNavigationbar extends StatelessWidget {
         Row(
           spacing: 10,
           children: [
+            Row(
+              spacing: 5,
+              children: [
+                Icon(
+                  Icons.access_alarms_rounded,
+                  color: Colors.deepPurpleAccent,
+                ),
+                Text(
+                  '6',
+                  style: TextStyle(
+                    color: Colors.deepPurpleAccent,
+                  ),
+                )
+              ],
+            ),
+            SizedBox(height: 10),
             GestureDetector(
               onTap: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => FavoritesPage())),
