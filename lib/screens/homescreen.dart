@@ -10,7 +10,7 @@ import 'package:redi/screens/chapter_page.dart';
 import '../components/bookTile.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
