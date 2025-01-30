@@ -39,7 +39,6 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         _books = books;
 
-        print(Colors.deepPurple.value);
         print(Colors.deepPurple.hashCode);
         print(Colors.white30.value);
       });
