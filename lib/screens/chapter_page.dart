@@ -33,6 +33,7 @@ class _ChapterPageState extends State<ChapterPage> {
     _loadFontSize();
     _loadFontFamily();
     _loadScrollProgress();
+    _addToList();
     //_loadBgColor();
     scrollController.addListener(() {
       _scrollProgress =
@@ -43,8 +44,9 @@ class _ChapterPageState extends State<ChapterPage> {
     print(_chapters);
   }
 
-  addToList() {
+  _addToList() {
     _chapters = widget.book.chapters.toList();
+    print(_chapters);
   }
 
   int toPercent() {
