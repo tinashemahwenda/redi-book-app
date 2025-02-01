@@ -25,6 +25,8 @@ class _ChapterPageState extends State<ChapterPage> {
   ScrollController scrollController = ScrollController();
   double _scrollProgress = 0;
 
+  List<Chapter> chapters = [];
+
   @override
   void initState() {
     super.initState();
@@ -38,6 +40,7 @@ class _ChapterPageState extends State<ChapterPage> {
 
       setState(() {});
     });
+    print(chapters);
   }
 
   int toPercent() {
