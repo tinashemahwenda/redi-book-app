@@ -383,12 +383,10 @@ class _ChapterPageState extends State<ChapterPage> {
                   Row(
                     spacing: 15,
                     children: [
-                      GestureDetector(
-                          onTap: () => Navigator.pop(context),
-                          child: Icon(
-                            Icons.arrow_back_ios_new,
-                            color: textColor,
-                          )),
+                      Icon(
+                        Icons.arrow_back_ios_new,
+                        color: textColor,
+                      ),
                       Column(
                         children: [
                           Text(
