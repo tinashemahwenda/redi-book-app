@@ -380,25 +380,28 @@ class _ChapterPageState extends State<ChapterPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    spacing: 15,
-                    children: [
-                      Icon(
-                        Icons.arrow_back_ios_new,
-                        color: textColor,
-                      ),
-                      Column(
-                        children: [
-                          Text(
-                            widget.book.title,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Row(
+                      spacing: 15,
+                      children: [
+                        Icon(
+                          Icons.arrow_back_ios_new,
+                          color: textColor,
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              widget.book.title,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
                             ),
-                          ),
-                        ],
-                      )
-                    ],
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                   GestureDetector(
                       onTap: showSettingsModal,
