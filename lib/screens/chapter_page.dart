@@ -384,7 +384,12 @@ class _ChapterPageState extends State<ChapterPage> {
                             Icons.arrow_back_ios_new,
                             color: textColor,
                           )),
-                      Text(widget.book.title)
+                      Column(
+                        children: [
+                          Text(widget.book.title),
+                          Text(widget.book.chapters[0].title),
+                        ],
+                      )
                     ],
                   ),
                   GestureDetector(
