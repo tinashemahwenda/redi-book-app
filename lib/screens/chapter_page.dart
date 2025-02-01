@@ -67,7 +67,7 @@ class _ChapterPageState extends State<ChapterPage> {
     });
   }
 
-  void _loadBgColor() async {
+  /*void _loadBgColor() async {
     final prefs = await SharedPreferences.getInstance();
     final colorValue = prefs.getInt('savedColor') ?? Colors.white.value;
 
@@ -75,7 +75,7 @@ class _ChapterPageState extends State<ChapterPage> {
       bgColor = Color(colorValue);
       textColor = Colors.white30;
     });
-  }
+  }*/
 
   void _loadScrollProgress() async {
     final prefs = await SharedPreferences.getInstance();
