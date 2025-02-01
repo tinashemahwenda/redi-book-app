@@ -37,9 +37,9 @@ class ChapterTile extends StatelessWidget {
         ),
         Text(
           chapterLength > 1
-              ? '$chapterLength Chapter Remaining | $bookAuthor'
+              ? '$chapterLength Chapters Remaining | $bookAuthor'
               : chapterLength == 1
-                  ? '$chapterLength Chapters Remaining | $bookAuthor'
+                  ? '$chapterLength Chapter Remaining | $bookAuthor'
                   : 'Final Chapter | $bookAuthor',
           style: TextStyle(
             fontSize: chapterSize / 1.5,
