@@ -236,7 +236,7 @@ class _ChapterPageState extends State<ChapterPage> {
                             SizedBox(
                               width: 20,
                             ),
-                            GestureDetector(
+                            /*GestureDetector(
                               onTap: changeBgToBrown,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(50),
@@ -274,7 +274,7 @@ class _ChapterPageState extends State<ChapterPage> {
                                       )),
                                 ),
                               ),
-                            ),
+                            ),*/
                             Container(
                               width: 20,
                               height: 20,
