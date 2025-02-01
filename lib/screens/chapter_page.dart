@@ -25,7 +25,7 @@ class _ChapterPageState extends State<ChapterPage> {
   ScrollController scrollController = ScrollController();
   double _scrollProgress = 0;
 
-  List<Chapter> chapters = [];
+  List _chapters = [];
 
   @override
   void initState() {
@@ -40,7 +40,11 @@ class _ChapterPageState extends State<ChapterPage> {
 
       setState(() {});
     });
-    print(chapters);
+    print(_chapters);
+  }
+
+  addToList() {
+    _chapters = widget.book.chapters.toList();
   }
 
   int toPercent() {
