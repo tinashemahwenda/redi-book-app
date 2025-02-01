@@ -244,11 +244,6 @@ class _ChapterPageState extends State<ChapterPage> {
                                   width: 30,
                                   height: 30,
                                   color: Colors.brown,
-                                  child: Icon(
-                                    Icons.check,
-                                    size: 16,
-                                    color: textColor,
-                                  ),
                                 ),
                               ),
                             ),
