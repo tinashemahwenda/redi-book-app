@@ -377,6 +377,7 @@ class _ChapterPageState extends State<ChapterPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
+                    spacing: 15,
                     children: [
                       GestureDetector(
                           onTap: () => Navigator.pop(context),
@@ -386,8 +387,13 @@ class _ChapterPageState extends State<ChapterPage> {
                           )),
                       Column(
                         children: [
-                          Text(widget.book.title),
-                          Text(widget.book.chapters[0].title),
+                          Text(
+                            widget.book.title,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
                         ],
                       )
                     ],
