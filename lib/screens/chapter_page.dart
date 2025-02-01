@@ -31,7 +31,7 @@ class _ChapterPageState extends State<ChapterPage> {
     _loadFontSize();
     _loadFontFamily();
     _loadScrollProgress();
-    _loadBgColor();
+    //_loadBgColor();
     scrollController.addListener(() {
       _scrollProgress =
           scrollController.offset / scrollController.position.maxScrollExtent;
@@ -376,12 +376,17 @@ class _ChapterPageState extends State<ChapterPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                      onTap: () => Navigator.pop(context),
-                      child: Icon(
-                        Icons.arrow_back_ios_new,
-                        color: textColor,
-                      )),
+                  Row(
+                    children: [
+                      GestureDetector(
+                          onTap: () => Navigator.pop(context),
+                          child: Icon(
+                            Icons.arrow_back_ios_new,
+                            color: textColor,
+                          )),
+                      Text(widget.book.title)
+                    ],
+                  ),
                   GestureDetector(
                       onTap: showSettingsModal,
                       child: Icon(
