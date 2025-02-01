@@ -19,11 +19,12 @@ class NotificationTile extends StatelessWidget {
         spacing: 20,
         children: [
           Container(
-            decoration: BoxDecoration(
-                border: Border.all(width: 1, color: Colors.black),
-                borderRadius: BorderRadius.circular(50)),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
             child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/reading.png'),
+              child: Icon(
+                Icons.notifications,
+                color: Colors.deepPurpleAccent,
+              ),
               radius: 30,
             ),
           ),
@@ -46,10 +47,6 @@ class NotificationTile extends StatelessWidget {
               ),
             ],
           ),
-          Icon(
-            Icons.delete_outline,
-            color: Colors.deepPurpleAccent,
-          )
         ],
       ),
     );
